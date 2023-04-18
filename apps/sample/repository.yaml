@@ -7,4 +7,4 @@ spec:
   interval: 5m
   url: https://github.com/hawkkiller/selfhosted-manifests
   ref:
-    branch: master
+    branch: main

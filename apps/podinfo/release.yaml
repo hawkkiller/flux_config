@@ -17,9 +17,9 @@ spec:
       retries: 3
   values:
     resources:
-      # requests: 
-      #   cpu: 100m
-      #   memory: 50Mi
-      # limits:
-      #   cpu: 100m
-      #   memory: 50Mi
+      requests: 
+        cpu: 10m
+        memory: 16Mi
+      limits:
+        cpu: 10m
+        memory: 16Mi

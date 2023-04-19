@@ -17,10 +17,10 @@ spec:
       retries: 3
   values:
     ingress:
-      name: "apps-ingress"
+      name: "ingress"
       className: "nginx"
       hosts:
-        - host: "*"
+        - host:
           paths:
             - path: /podinfo
               pathType: Prefix

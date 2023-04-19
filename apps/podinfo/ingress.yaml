@@ -20,6 +20,8 @@ spec:
     ingress:
       name: "podinfo-ingress"
       className: "nginx"
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /
       hosts:
         - host:
           paths:

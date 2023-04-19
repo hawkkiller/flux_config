@@ -1,0 +1,8 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: selfhosted-manifests
+  namespace: default
+spec:
+  interval: 5m
+  url: https://hawkkiller.github.io/selfhosted-manifests/

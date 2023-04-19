@@ -20,7 +20,8 @@ spec:
       name: "apps-ingress"
       className: "nginx"
       hosts:
-        - paths:
+        - host: "*"
+          paths:
             - path: /
               pathType: Prefix
               serviceName: "podinfo"

@@ -2,7 +2,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: ingress
-  namespace: default
+  namespace: ingress
 spec:
   releaseName: ingress
   chart:
@@ -18,7 +18,6 @@ spec:
   values:
     ingress:
       name: "apps-ingress"
-      namespace: "default"
       className: "nginx"
       hosts:
         - host: example.com

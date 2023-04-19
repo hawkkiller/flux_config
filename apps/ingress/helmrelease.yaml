@@ -20,9 +20,9 @@ spec:
       name: "apps-ingress"
       className: "nginx"
       hosts:
-        - host: example.com
+        - host: 34.116.204.168
           paths:
             - path: /
               pathType: Prefix
               serviceName: "podinfo"
-              servicePort: 80
+              servicePort: 9898

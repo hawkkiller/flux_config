@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ingress
-  namespace: ingress
+  name: podinfo-ingress
+  namespace: podinfo
 spec:
-  releaseName: ingress
+  releaseName: podinfo-ingress
   chart:
     spec:
       chart: ingress
@@ -17,12 +17,12 @@ spec:
       retries: 3
   values:
     ingress:
-      name: "ingress"
+      name: "podinfo-ingress"
       className: "nginx"
       hosts:
         - host:
           paths:
             - path: /podinfo
               pathType: Prefix
-              serviceName: "podinfo.podinfo.svc.cluster.local"
+              serviceName: "podinfo"
               servicePort: 9898

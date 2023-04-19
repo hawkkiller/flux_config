@@ -17,4 +17,4 @@ spec:
       retries: 3
   values:
     ingress:
-      host: ingress.example.com
+      name: "apps-ingress"

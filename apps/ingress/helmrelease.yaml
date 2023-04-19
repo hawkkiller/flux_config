@@ -20,7 +20,7 @@ spec:
       name: "apps-ingress"
       className: "nginx"
       hosts:
-        - host: 34.116.204.168
+        - host: "nip.io"
           paths:
             - path: /
               pathType: Prefix

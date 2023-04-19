@@ -21,11 +21,11 @@ spec:
       name: "podinfo-ingress"
       className: "nginx"
       annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /
+        nginx.ingress.kubernetes.io/rewrite-target: /$1
       hosts:
         - host:
           paths:
-            - path: /podinfo
+            - path: /podinfo/(.*)
               pathType: Prefix
               serviceName: "podinfo"
               servicePort: 9898

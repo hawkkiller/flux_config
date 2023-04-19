@@ -22,7 +22,7 @@ spec:
       hosts:
         - host: "*"
           paths:
-            - path: /
+            - path: /podinfo
               pathType: Prefix
-              serviceName: "podinfo"
+              serviceName: "podinfo.podinfo.svc.cluster.local"
               servicePort: 9898

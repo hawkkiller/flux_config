@@ -30,7 +30,7 @@ spec:
       hosts:
         - host: test.themisha.dev
           paths:
-            - path: /chat
+            - path: /chat/(.*)
               pathType: Prefix
               serviceName: "chat-gpt"
               servicePort: 3000

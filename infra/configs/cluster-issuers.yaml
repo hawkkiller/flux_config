@@ -9,6 +9,7 @@ spec:
     # Replace the email address with your own contact email
     email: miskadl09@gmail.com
     # staging server for testing
+    # produces valid certificates, but they are not trusted by browsers
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-staging
@@ -26,7 +27,8 @@ spec:
   acme:
     # Replace the email address with your own contact email
     email: miskadl09@gmail.com
-    # staging server for testing
+    # production server
+    # produces trusted certificates
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: letsencrypt-prod

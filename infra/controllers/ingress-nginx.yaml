@@ -45,5 +45,4 @@ metadata:
   namespace: ingress-nginx
 data:
   rewrite-target: "/$1"
-  cluster-issuer: "letsencrypt-prod"
 ---

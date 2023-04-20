@@ -20,6 +20,8 @@ spec:
     ingress:  
       name: "podinfo-ingress"
       className: "nginx"
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-prod"
       tls:
         - hosts:
             - test.themisha.dev

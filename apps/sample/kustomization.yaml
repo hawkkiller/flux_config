@@ -1,6 +1,6 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - gitrepository-sample.yaml"
+  - repository.yaml"
   - kustomization-sample.yaml"
   - ingress-sample.yaml"

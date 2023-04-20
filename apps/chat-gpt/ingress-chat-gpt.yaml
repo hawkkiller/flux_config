@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: chat-gpt-ingress
+  namespace: chat-gpt
+spec:
+  releaseName: chat-gpt-ingress
+  chart:
+    spec:
+      chart: ingress
+      sourceRef:
+        kind: HelmRepository
+        name: selfhosted-manifests
+        namespace: default
+  interval: 15m
+  install:
+    remediation:
+      retries: 3
+  values:
+    ingress:
+      name: "chat-gpt-ingress"
+      className: "nginx"
+      tls:
+        - hosts:
+            - test.themisha.dev
+          secretName: tls-store
+      hosts:
+        - host: test.themisha.dev
+          paths:
+            - path: /chat
+              pathType: Prefix
+              serviceName: "chat-gpt"
+              servicePort: 9898

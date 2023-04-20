@@ -44,6 +44,6 @@ metadata:
   name: nginx-config
   namespace: ingress-nginx
 data:
-  nginx.ingress.kubernetes.io/rewrite-target: "/$1"
-  cert-manager.io/cluster-issuer: "letsencrypt-prod"
+  rewrite-target: "/$1"
+  cluster-issuer: "letsencrypt-prod"
 ---

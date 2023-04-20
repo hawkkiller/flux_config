@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: chat-gpt
+  namespace: chat-gpt
+spec:
+  releaseName: chat-gpt
+  chart:
+    spec:
+      chart: chat-gpt
+      sourceRef:
+        kind: HelmRepository
+        name: selfhosted-manifests
+        namespace: default
+  interval: 15m
+  install:
+    remediation:
+      retries: 3
+  valuesFrom:
+    - kind: ConfigMap
+      name: chat-gpt-value-overrides

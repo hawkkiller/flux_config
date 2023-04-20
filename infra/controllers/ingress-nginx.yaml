@@ -42,7 +42,7 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: nginx-config
-  namespace: nginx-ingress
+  namespace: ingress-nginx
 data:
   nginx.ingress.kubernetes.io/rewrite-target: "/$1"
   cert-manager.io/cluster-issuer: "letsencrypt-prod"

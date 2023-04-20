@@ -34,7 +34,3 @@ spec:
               pathType: Prefix
               serviceName: "podinfo"
               servicePort: 9898
-            - path: /podinfo
-              pathType: Exact
-              serviceName: "podinfo"
-              servicePort: 9898

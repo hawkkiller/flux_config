@@ -7,6 +7,9 @@ data:
   values.yaml: |
     container:
       port: 3000
+    service:
+      port: 3000
+      portName: http
     resources:
       requests: 
         cpu: 10m

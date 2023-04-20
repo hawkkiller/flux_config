@@ -30,4 +30,4 @@ spec:
             - path: /chat
               pathType: Prefix
               serviceName: "chat-gpt"
-              servicePort: 9898
+              servicePort: http

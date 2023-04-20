@@ -33,4 +33,4 @@ spec:
             - path: /sample/(.*)
               pathType: Prefix
               serviceName: "sampleapp"
-              servicePort: 8686
+              servicePort: 9944

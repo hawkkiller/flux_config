@@ -17,13 +17,18 @@ spec:
     remediation:
       retries: 3
   values:
-    ingress:
+    ingress:  
       name: "podinfo-ingress"
       className: "nginx"
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
+        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+      tls:
+        - hosts:
+            - test.themisha.dev
+          secretName: test.themisha.dev
       hosts:
-        - host:
+        - host: test.themisha.dev
           paths:
             - path: /podinfo/(.*)
               pathType: Prefix

@@ -20,13 +20,10 @@ spec:
     ingress:  
       name: "podinfo-ingress"
       className: "nginx"
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$1
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
       tls:
         - hosts:
             - test.themisha.dev
-          secretName: test.themisha.dev
+          secretName: tls-store
       hosts:
         - host: test.themisha.dev
           paths:

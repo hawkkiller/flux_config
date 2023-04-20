@@ -20,9 +20,6 @@ spec:
     ingress:  
       name: "sample-ingress"
       className: "nginx"
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: /$1
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
       tls:
         - hosts:
             - test.themisha.dev

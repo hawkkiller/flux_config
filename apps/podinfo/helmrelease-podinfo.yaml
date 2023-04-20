@@ -15,11 +15,6 @@ spec:
   install:
     remediation:
       retries: 3
-  values:
-    resources:
-      requests: 
-        cpu: 10m
-        memory: 100Mi
-      limits:
-        cpu: 10m
-        memory: 100Mi
+  valuesFrom:
+    - kind: ConfigMap
+      name: podinfo-value-overrides

@@ -2,7 +2,8 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: podinfo
 resources:
-  - namespace.yaml
-  - repository.yaml
-  - release.yaml
-  - ingress.yaml
+  - namespace-podinfo.yaml
+  - helmrepository-podinfo.yaml
+  - helmrelease-podinfo.yaml
+  - ingress-podinfo.yaml
+  - configmap-podinfo-value-overrides.yaml

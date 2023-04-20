@@ -38,11 +38,3 @@ spec:
     admissionWebhooks:
       enabled: false
 ---
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: nginx-config
-  namespace: ingress-nginx
-data:
-  rewrite-target: "/$1"
----

@@ -25,12 +25,12 @@ spec:
         nginx.ingress.kubernetes.io/rewrite-target: "/$1"
       tls:
         - hosts:
-            - test.themisha.dev
+            - chat.themisha.dev
           secretName: tls-store
       hosts:
-        - host: test.themisha.dev
+        - host: chat.themisha.dev
           paths:
-            - path: /chat/(.*)
+            - path: /(.*)
               pathType: Prefix
               serviceName: "chat-gpt"
               servicePort: 3000

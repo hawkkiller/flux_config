@@ -14,7 +14,10 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-staging
     solvers:
-      - dns01:
+      - selector:
+          dnsZones:
+            - themisha.dev
+        dns01:
           cloudDNS:
             project: learning-383919
             serviceAccountSecretRef:
@@ -36,7 +39,10 @@ spec:
     privateKeySecretRef:
       name: letsencrypt-prod
     solvers:
-      - dns01:
+      - selector:
+          dnsZones:
+            - themisha.dev
+        dns01:
           cloudDNS:
             project: learning-383919
             serviceAccountSecretRef:

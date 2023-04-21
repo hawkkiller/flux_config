@@ -5,4 +5,3 @@ resources:
   - namespace-sealed-secrets.yaml
   - helmrepository-sealed-secrets.yaml
   - helmrelease-sealed-secrets.yaml
-  - configmap-sealed-secrets-value-overrides.yaml

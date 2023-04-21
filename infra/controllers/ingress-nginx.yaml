@@ -35,6 +35,8 @@ spec:
     controller:
       service:
         type: "LoadBalancer"
+      extraArgs:
+        default-ssl-certificate: "cert-manager/tls-store-wild"
     admissionWebhooks:
       enabled: false
 ---

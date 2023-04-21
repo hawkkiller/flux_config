@@ -36,6 +36,12 @@ spec:
       - http01:
           ingress:
             class: nginx
+      - dns01:
+          cloudDNS:
+            project: learning-383919
+            serviceAccountSecretRef:
+              name: clouddns-dns01-solver-svc-acct
+              key: key.json
 ---
 #apiVersion: cert-manager.io/v1
 #kind: Certificate

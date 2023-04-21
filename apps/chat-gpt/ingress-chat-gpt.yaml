@@ -21,12 +21,10 @@ spec:
       name: "chat-gpt-ingress"
       className: "nginx"
       annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
         nginx.ingress.kubernetes.io/rewrite-target: "/$1"
       tls:
         - hosts:
             - chat.themisha.dev
-          secretName: tls-store
       hosts:
         - host: chat.themisha.dev
           paths:

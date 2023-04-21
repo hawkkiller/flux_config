@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - sealed-secrets.yaml
   - sources.yaml
-  - clouddns-svc.yaml

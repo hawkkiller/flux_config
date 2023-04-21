@@ -39,3 +39,4 @@ spec:
           secretName: chat-secret
       hosts:
         - host: chat.themisha.dev
+          paths:

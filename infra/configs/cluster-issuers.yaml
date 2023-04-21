@@ -36,3 +36,19 @@ spec:
       - http01:
           ingress:
             class: nginx
+---
+#apiVersion: cert-manager.io/v1
+#kind: Certificate
+#metadata:
+#  name: sandbox
+#  namespace: cert-manager
+#spec:
+#  secretName: sandbox-tls
+#  commonName: sandbox
+#  issuerRef:
+#    name: sandbox-ca
+#    kind: Issuer
+#    group: cert-manager.io
+#  secretTemplate:
+#    annotations:
+#      kubed.appscode.com/sync: "cert-manager-tls=sandbox" # Sync certificate to matching namespaces

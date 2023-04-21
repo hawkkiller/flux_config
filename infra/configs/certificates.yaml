@@ -12,7 +12,6 @@ spec:
     group: cert-manager.io
   dnsNames:
     - "*.themisha.dev"
-    - "themisha.dev"
   secretTemplate:
     annotations:
       kubed.appscode.com/sync: "cert-manager-tls=wild"

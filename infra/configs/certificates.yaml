@@ -11,9 +11,8 @@ spec:
     kind: ClusterIssuer
     group: cert-manager.io
   dnsNames:
-    - test.themisha.dev
-    - chat.themisha.dev
-    - themisha.dev
+    - "*.themisha.dev"
+    - "themisha.dev"
   secretTemplate:
     annotations:
       kubed.appscode.com/sync: "cert-manager-tls=wild"

@@ -5,7 +5,7 @@ metadata:
   namespace: cert-manager
 spec:
   secretName: tls-store-wild
-  commonName: themisha.dev
+  commonName: "*.themisha.dev"
   issuerRef:
     name: letsencrypt-staging
     kind: ClusterIssuer

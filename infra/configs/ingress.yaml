@@ -11,6 +11,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: chat-gpt-ingress
+  namespace: default
 spec:
   releaseName: chat-gpt-ingress
   chart:

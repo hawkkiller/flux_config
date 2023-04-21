@@ -6,3 +6,35 @@ metadata:
 spec:
   interval: 5m
   url: https://hawkkiller.github.io/selfhosted-manifests/
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: chat-gpt-ingress
+spec:
+  releaseName: chat-gpt-ingress
+  chart:
+    spec:
+      chart: ingress
+      sourceRef:
+        kind: HelmRepository
+        name: selfhosted-manifests
+        namespace: default
+  interval: 15m
+  install:
+    remediation:
+      retries: 3
+  values:
+    ingress:
+      name: "chat-gpt-ingress-master"
+      className: "nginx"
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-staging"
+        nginx.ingress.kubernetes.io/rewrite-target: "/$1"
+        nginx.org/mergeable-ingress-type: "master"
+      tls:
+        - hosts:
+            - chat.themisha.dev
+          secretName: chat-secret
+      hosts:
+        - host: chat.themisha.dev

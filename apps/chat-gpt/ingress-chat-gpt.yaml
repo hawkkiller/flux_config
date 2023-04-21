@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: chat-gpt-ingress
+  name: chat-gpt-ingress-minion
   namespace: chat-gpt
 spec:
-  releaseName: chat-gpt-ingress
+  releaseName: chat-gpt-ingress-minion
   chart:
     spec:
       chart: ingress
@@ -18,15 +18,10 @@ spec:
       retries: 3
   values:
     ingress:
-      name: "chat-gpt-ingress"
+      name: "chat-gpt-ingress-minion"
       className: "nginx"
       annotations:
-        cert-manager.io/cluster-issuer: "letsencrypt-prod"
-        nginx.ingress.kubernetes.io/rewrite-target: "/$1"
-      tls:
-        - hosts:
-            - chat.themisha.dev
-          secretName: tls-store
+        nginx.org/mergeable-ingress-type: "minion"
       hosts:
         - host: chat.themisha.dev
           paths:

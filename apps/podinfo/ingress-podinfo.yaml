@@ -18,7 +18,6 @@ spec:
       retries: 3
   values:
     ingress:  
-      name: "podinfo-ingress"
       className: "nginx"
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: "/$1"

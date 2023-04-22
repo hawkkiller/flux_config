@@ -4,3 +4,4 @@ namespace: flux-system
 resources:
   - helmrelease-weave-gitops.yaml
   - helmrepository-weave-gitops.yaml
+  - ingress-weave-gitops.yaml

@@ -1,10 +1,10 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: chat-gpt-ingress
-  namespace: chat-gpt
+  name: weave-gitops-ingress
+  namespace: flux-system
 spec:
-  releaseName: chat-gpt-ingress
+  releaseName: weave-gitops-ingress
   chart:
     spec:
       chart: ingress
@@ -23,11 +23,11 @@ spec:
         nginx.ingress.kubernetes.io/rewrite-target: "/$1"
       tls:
         - hosts:
-            - chat.themisha.dev
+            - dashboard.themisha.dev
       hosts:
-        - host: chat.themisha.dev
+        - host: dashboard.themisha.dev
           paths:
             - path: /(.*)
               pathType: Prefix
-              serviceName: "chat-gpt"
-              servicePort: 3000
+              serviceName: "ww-gitops-weave-gitops"
+              servicePort: 9001

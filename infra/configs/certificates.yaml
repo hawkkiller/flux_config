@@ -7,7 +7,7 @@ spec:
   secretName: tls-store-wild
   commonName: "*.themisha.dev"
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-prod
     kind: ClusterIssuer
     group: cert-manager.io
   dnsNames:

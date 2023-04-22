@@ -23,9 +23,9 @@ spec:
         nginx.ingress.kubernetes.io/rewrite-target: "/$1"
       tls:
         - hosts:
-            - dashboard.themisha.dev
+            - weave.themisha.dev
       hosts:
-        - host: dashboard.themisha.dev
+        - host: weave.themisha.dev
           paths:
             - path: /(.*)
               pathType: Prefix

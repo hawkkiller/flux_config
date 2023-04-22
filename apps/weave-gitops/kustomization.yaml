@@ -5,3 +5,4 @@ resources:
   - helmrelease-weave-gitops.yaml
   - helmrepository-weave-gitops.yaml
   - ingress-weave-gitops.yaml
+  - sealed-secret-weave-gitops-values.yaml

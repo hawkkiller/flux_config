@@ -1,33 +1,56 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: chat-gpt-ingress
+  name: chat-gpt
   namespace: chat-gpt
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
-  releaseName: chat-gpt-ingress
-  chart:
-    spec:
-      chart: ingress
-      sourceRef:
-        kind: HelmRepository
-        name: selfhosted-manifests
-        namespace: default
-  interval: 15m
-  install:
-    remediation:
-      retries: 3
-  values:
-    ingress:
-      className: "nginx"
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: "/$1"
-      tls:
-        - hosts:
-            - chat.themisha.dev
-      hosts:
-        - host: chat.themisha.dev
-          paths:
-            - path: /(.*)
-              pathType: Prefix
-              serviceName: "chat-gpt"
-              servicePort: 3000
+  tls:
+    - hosts:
+        - chat.themisha.dev
+  rules:
+    - host: chat.themisha.dev
+      http:
+        paths:
+          - path: /(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: chat-gpt
+                port:
+                  number: 80
+#apiVersion: helm.toolkit.fluxcd.io/v2beta1
+#kind: HelmRelease
+#metadata:
+#  name: chat-gpt-ingress
+#  namespace: chat-gpt
+#spec:
+#  releaseName: chat-gpt-ingress
+#  chart:
+#    spec:
+#      chart: ingress
+#      sourceRef:
+#        kind: HelmRepository
+#        name: selfhosted-manifests
+#        namespace: default
+#  interval: 15m
+#  install:
+#    remediation:
+#      retries: 3
+#  values:
+#    ingress:
+#      className: "nginx"
+#      annotations:
+#        nginx.ingress.kubernetes.io/rewrite-target: "/$1"
+#      tls:
+#        - hosts:
+#            - chat.themisha.dev
+#      hosts:
+#        - host: chat.themisha.dev
+#          paths:
+#            - path: /(.*)
+#              pathType: Prefix
+#              serviceName: "chat-gpt"
+#              servicePort: 3000

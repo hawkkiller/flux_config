@@ -2,6 +2,8 @@
 
 This repository contains a set of Flux configs for deploying various services to a Kubernetes cluster.
 
+## doc is WIP
+
 ## Useful commands
 
 - `flux get kustomizations` - list all the kustomizations in the cluster

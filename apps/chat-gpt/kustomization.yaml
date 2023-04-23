@@ -3,6 +3,6 @@ kind: Kustomization
 namespace: chat-gpt
 resources:
   - namespace-chat-gpt.yaml
+  - configmap-chat-gpt-value-overrides.yaml
   - helmrelease-chat-gpt.yaml
   - ingress-chat-gpt.yaml
-  - configmap-chat-gpt-value-overrides.yaml

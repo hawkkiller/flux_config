@@ -20,7 +20,7 @@ spec:
               service:
                 name: chat-gpt
                 port:
-                  number: 80
+                  number: 3000
 #apiVersion: helm.toolkit.fluxcd.io/v2beta1
 #kind: HelmRelease
 #metadata:

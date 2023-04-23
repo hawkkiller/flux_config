@@ -1,33 +1,23 @@
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: podinfo-ingress
+  name: podinfo
   namespace: podinfo
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
-  releaseName: podinfo-ingress
-  chart:
-    spec:
-      chart: ingress
-      sourceRef:
-        kind: HelmRepository
-        name: selfhosted-manifests
-        namespace: default
-  interval: 15m
-  install:
-    remediation:
-      retries: 3
-  values:
-    ingress:  
-      className: "nginx"
-      annotations:
-        nginx.ingress.kubernetes.io/rewrite-target: "/$1"
-      tls:
-        - hosts:
-            - test.themisha.dev
-      hosts:
-        - host: test.themisha.dev
-          paths:
-            - path: /podinfo/(.*)
-              pathType: Prefix
-              serviceName: "podinfo"
-              servicePort: 9898
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - test.themisha.dev
+  rules:
+    - host: test.themisha.dev
+      http:
+        paths:
+          - path: /podinfo/(.*)
+            pathType: Prefix
+            backend:
+              service:
+                name: podinfo
+                port:
+                  number: 9898

@@ -19,4 +19,4 @@ data:
         pullPolicy: IfNotPresent
 
     database:
-      client: sqlite
+      client: sqlite3

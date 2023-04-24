@@ -7,16 +7,28 @@ data:
   values.yaml: |
     ghost:
       nodeEnv: production
-
-    service:
-      type: ClusterIP
-      port: 80
-
-    container:
+      timezone: UTC
+      url: https://themisha.dev
       image:
         repository: ghost
         tag: 5.44.0-alpine
         pullPolicy: IfNotPresent
 
+    litestream:
+      image:
+        repository: litestream/litestream
+        tag: latest
+        pullPolicy: IfNotPresent
+      awsSecretRef: aws-credentials
+      replicatePathS3: "themisha-dev/ghost.db"
+
+    service:
+      type: ClusterIP
+      port: 80
+
     database:
       client: sqlite3
+      size: "1Gi"
+      connection:
+        filename: /var/lib/ghost/content/data/ghost.db
+        mount: /var/lib/ghost/content/data

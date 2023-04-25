@@ -19,7 +19,7 @@ data:
    
    # litestream is a tool for replicating SQLite databases to S3
    litestream:
-     enabled: false
+     enabled: true
      image:
        repository: litestream/litestream
        tag: latest
@@ -30,13 +30,13 @@ data:
    database:
      # Supported databases: sqlite3, mysql
      sqlite3:
-       enabled: false
+       enabled: true
        size: "1Gi"
        connection:
          filename: /var/lib/ghost/content/data/ghost.db
          mount: /var/lib/ghost/content/data
      mysql:
-       enabled: true
+       enabled: false
        host: mysql
        port: 3306
        user: ghost

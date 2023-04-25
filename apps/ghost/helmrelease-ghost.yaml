@@ -7,7 +7,7 @@ spec:
   releaseName: ghost
   chart:
     spec:
-      chart: bitnami/ghost
+      chart: ghost
       sourceRef:
         kind: HelmRepository
         name: ghost-repository

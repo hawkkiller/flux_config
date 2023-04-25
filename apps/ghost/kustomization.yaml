@@ -3,7 +3,8 @@ kind: Kustomization
 namespace: ghost
 resources:
   - namespace-ghost.yaml
-  - sealed-secret-aws-credentials.yaml
+  - helmrepository-ghost.yaml
+  - sealed-secret-mysql-ghost.yaml
   - configmap-ghost-value-overrides.yaml
   - helmrelease-ghost.yaml
   - ingress-ghost.yaml

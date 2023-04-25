@@ -5,30 +5,41 @@ metadata:
   namespace: ghost
 data:
   values.yaml: |
-    ghost:
-      nodeEnv: production
-      timezone: UTC
-      url: https://themisha.dev
-      image:
-        repository: ghost
-        tag: 5.44.0-alpine
-        pullPolicy: IfNotPresent
-
-    litestream:
-      image:
-        repository: litestream/litestream
-        tag: latest
-        pullPolicy: IfNotPresent
-      awsSecretRef: aws-credentials
-      replicatePathS3: "themisha-dev/ghost.db"
-
-    service:
-      type: ClusterIP
-      port: 80
-
-    database:
-      client: sqlite3
-      size: "1Gi"
-      connection:
-        filename: /var/lib/ghost/content/data/ghost.db
-        mount: /var/lib/ghost/content/data
+   ghost:
+     nodeEnv: development
+     timezone: UTC
+     url: https://themisha.dev
+     image:
+       repository: ghost
+       tag: 5.44.0-alpine
+       pullPolicy: IfNotPresent
+     service:
+       type: ClusterIP
+       port: 80
+   
+   # litestream is a tool for replicating SQLite databases to S3
+   litestream:
+     enabled: false
+     image:
+       repository: litestream/litestream
+       tag: latest
+       pullPolicy: IfNotPresent
+     awsSecretRef: aws-credentials
+     replicatePathS3: "themisha-dev/ghost.db"
+   
+   database:
+     # Supported databases: sqlite3, mysql
+     sqlite3:
+       enabled: false
+       size: "1Gi"
+       connection:
+         filename: /var/lib/ghost/content/data/ghost.db
+         mount: /var/lib/ghost/content/data
+     mysql:
+       enabled: true
+       host: mysql
+       port: 3306
+       user: ghost
+       password: ghost
+       database: ghost
+       size: "10Gi"

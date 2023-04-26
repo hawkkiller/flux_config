@@ -10,7 +10,8 @@ spec:
       chart: ghost
       sourceRef:
         kind: HelmRepository
-        name: ghost-repository
+        name: selfhosted-manifests
+        namespace: default
   interval: 15m
   install:
     remediation:

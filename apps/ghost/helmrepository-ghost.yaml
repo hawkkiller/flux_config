@@ -1,8 +1,0 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta1
-kind: HelmRepository
-spec:
-  interval: 50m
-  url: https://charts.bitnami.com/bitnami
-metadata:
-  name: ghost-repository
-  namespace: ghost

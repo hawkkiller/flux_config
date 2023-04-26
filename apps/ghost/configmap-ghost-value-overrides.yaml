@@ -16,6 +16,16 @@ data:
       service:
         type: ClusterIP
         port: 80
+      mail:
+        from: "Michael Lazebny <themisha.dev>"
+        transport: SMTP
+        host: smtp.gmail.com
+        port: 587
+        auth:
+          username: ""
+          password: ""
+          # or use secret reference for password and
+          privateSecretRef: ghost-mail
     
     # litestream is a tool for replicating SQLite databases to S3
     litestream:

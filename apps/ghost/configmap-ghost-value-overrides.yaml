@@ -17,7 +17,7 @@ data:
         type: ClusterIP
         port: 80
       mail:
-        from: "Michael Lazebny <themisha.dev>"
+        from: "themisha.dev <"
         transport: SMTP
         host: smtp.gmail.com
         port: 587
@@ -27,34 +27,16 @@ data:
           # or use secret reference for password and
           privateSecretRef: ghost-mail
     
-    # litestream is a tool for replicating SQLite databases to S3
-    litestream:
-      enabled: false
-      image:
-        repository: litestream/litestream
-        tag: latest
-        pullPolicy: IfNotPresent
-      awsSecretRef: aws-credentials
-      replicatePathS3: "themisha-dev/ghost.db"
-    
-    database:
-      # Supported databases: sqlite3, mysql
+    mysql:
       size: 8Gi
-      sqlite3:
-        enabled: false
-        connection:
-          filename: /var/lib/ghost/content/data/ghost.db
-          mount: /var/lib/ghost/content/data
-      mysql:
-        enabled: true
-        image:
-          repository: mysql
-          tag: 8.0.33-debian
-          pullPolicy: IfNotPresent
-        connection:
-          # mysql-database
-          # mysql-username
-          # mysql-password
-          # mysql-root-password
-          privateSecretRef: ghost-mysql
-        mount: /var/lib/mysql
+      image:
+        repository: mysql
+        tag: 8.0.33-debian
+        pullPolicy: IfNotPresent
+      connection:
+        # mysql-database
+        # mysql-username
+        # mysql-password
+        # mysql-root-password
+        privateSecretRef: ghost-mysql
+      mount: /var/lib/mysql

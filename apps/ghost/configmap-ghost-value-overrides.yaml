@@ -626,10 +626,6 @@ data:
       ##      https://github.com/bitnami/containers/tree/main/bitnami/mysql/#creating-a-database-on-first-run
       ##      https://github.com/bitnami/containers/tree/main/bitnami/mysql/#creating-a-database-user-on-first-run
       auth:
-        rootPassword: ""
-        database: ""
-        username: ""
-        password: ""
         existingSecret: "ghost-mysql"
       ## MySQL Primary configuration
       ##

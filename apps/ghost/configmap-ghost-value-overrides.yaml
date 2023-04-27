@@ -22,8 +22,6 @@ data:
         host: smtp.gmail.com
         port: 587
         auth:
-          username: ""
-          password: ""
           # or use secret reference for password and
           privateSecretRef: ghost-mail
     

@@ -4,6 +4,7 @@ namespace: ghost
 resources:
   - namespace-ghost.yaml
   - sealed-secret-mysql-ghost.yaml
+  - sealed-secret-ghost-backup.yaml
   - sealed-secret-ghost-mail.yaml
   - configmap-ghost-value-overrides.yaml
   - helmrelease-ghost.yaml

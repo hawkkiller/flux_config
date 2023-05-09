@@ -4,5 +4,5 @@ namespace: flux-system
 resources:
   - sealed-secret-weawe-gitops.yaml
   - helmrelease-weave-gitops.yaml
-  - helmrepository-weave-gitops.yaml
+  - ../../flux/repositories/oci/weave-gitops.yaml
   - ingress-weave-gitops.yaml

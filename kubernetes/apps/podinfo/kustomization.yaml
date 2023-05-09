@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: podinfo
 resources:
   - namespace-podinfo.yaml
-  - helmrepository-podinfo.yaml
   - helmrelease-podinfo.yaml
   - ingress-podinfo.yaml
   - configmap-podinfo-value-overrides.yaml

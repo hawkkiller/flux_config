@@ -2,8 +2,7 @@ apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
   name: selfhosted-manifests
-  namespace: default
+  namespace: flux-system
 spec:
   interval: 5m
   url: https://hawkkiller.github.io/selfhosted-manifests/
----

@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - ./bitnami.yaml
   - ./podinfo.yaml
+  - ./selfhosted-manifests.yaml

@@ -2,5 +2,6 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 resources:
   # Pre-flux kustomizations
   - "./namespace.yaml"
+  - "./ingress-grafana.yaml"
   # Flux kustomizations
   - "./kube-prometheus-stack/ks.yaml"

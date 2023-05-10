@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  flux:secret:
+    desc: "Create secret for the Git repository"
+    dotenv: [".env"]
+    cmds:
+      - flux create secret git flux-system-creds --url=$REPOSITORY --private-key-file=$KEYFILE
+    silent: true

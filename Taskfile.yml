@@ -1,9 +1,16 @@
 version: '3'
 
 tasks:
-  flux:secret:
-    desc: "Create secret for the Git repository"
-    dotenv: [".env"]
+#  flux:secret:
+#    desc: "Create secret for the Git repository"
+#    dotenv: [".env"]
+#    cmds:
+#      - flux create secret git flux-system-creds --url=$REPOSITORY --private-key-file=$KEYFILE
+#    silent: true
+  flux:bootstrap:
+    desc: "Bootstrap Flux"
+    dotenv:
+      - ".env"
     cmds:
-      - flux create secret git flux-system-creds --url=$REPOSITORY --private-key-file=$KEYFILE
+      - flux bootstrap git --url=$REPOSITORY --branch=$BRANCH --path=kubernetes/flux/config --private-key-file=$KEYFILE
     silent: true

@@ -19,7 +19,7 @@ data:
         hosts:
         - host: themisha.dev
           paths:
-          - path: /
+          - path: /(.*)
             pathType: Prefix
       image:
         repository: ghost

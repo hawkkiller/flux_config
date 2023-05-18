@@ -1,0 +1,15 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: themisha-dev-wild
+  namespace: networking
+spec:
+  secretName: themisha-dev-wild
+  commonName: "themisha.dev"
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+    group: cert-manager.io
+  dnsNames:
+    - "themisha.dev"
+    - "*.themisha.dev"

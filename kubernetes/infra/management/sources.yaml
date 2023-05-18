@@ -6,4 +6,3 @@ metadata:
 spec:
   interval: 5m
   url: https://hawkkiller.github.io/selfhosted-manifests/
----

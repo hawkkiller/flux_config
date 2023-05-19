@@ -4,4 +4,3 @@ metadata:
   name: chat-gpt
   labels:
     cert-manager-tls: wild
----

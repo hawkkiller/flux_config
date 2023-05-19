@@ -16,6 +16,22 @@ spec:
         name: ww-gitops
         namespace: flux-system
   interval: 1h0m0s
+  values:
+    ingress:
+      enabled: true
+      className: nginx
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /$1
+      hosts: 
+        - host: weave.themisha.dev
+          paths: 
+            - path: /(.*)
+              pathType: Prefix
+    service:
+      create: true
+      type: ClusterIP
+      port: 9001
+
   valuesFrom:
     - kind: Secret
       name: weave-gitops-values

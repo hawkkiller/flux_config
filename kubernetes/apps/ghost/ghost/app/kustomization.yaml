@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - "./configmap-ghost-value-overrides.yaml"
   - "./helmrelease.yaml"
-  - "./test.sops.yaml"
+  - "./test-secret.yaml"
   

@@ -1,5 +1,4 @@
 creation_rules:
   - path_regex: .*.ya?ml
     encrypted_regex: ^(data|stringData)$
-    pgp: E7D40D73FCA0B7C070FD944B3C60B36B62E78D8D
     age: age1wuhwmhppza9qpv9xmu9wp8pt399q687y28ftwjkhx7tv4cs7vf3qmt8fr7

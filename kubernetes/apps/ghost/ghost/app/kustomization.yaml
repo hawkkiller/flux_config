@@ -3,8 +3,5 @@ kind: Kustomization
 resources:
   - "./configmap-ghost-value-overrides.yaml"
   - "./helmrelease.yaml"
-  - "./sealed-secret-ghost-backup.yaml"
-  - "./sealed-secret-ghost-mail.yaml"
-  - "./sealed-secret-mysql-ghost.yaml"
   - "./test.sops.yaml"
   

@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: Namespace
-metadata:
-  name: chat-gpt
-  labels:
-    cert-manager-tls: wild

@@ -1,0 +1,27 @@
+apiVersion: v1
+data:
+    test: ENC[AES256_GCM,data:32ywFpUzIx0=,iv:Ixf40Ia/zvwlwABGWw1Ytm4CEK9K9iMMVU/wwKKxrrA=,tag:yxu535IwdVvJ7GYFv6BIyQ==,type:str]
+kind: Secret
+metadata:
+    creationTimestamp: null
+    name: ghost-backup
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age14kj3f5jk9mmpvjc9srkkwr7medcvvzzym80dx5mj6uu3xn7jhqys0rqwr2
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSAxWTZpYVBFSk9JSGdxOVBz
+            UFNvaXlRbERYTWxIWWowNE1hQ1hTQ3FwcFVRCkRpVnFRMGw0TzFvUmJBSHAxWnFy
+            WUJyZFZ3WmVVOVpydXlXSjRTZWhiUDAKLS0tIG5YVXdPRllrS1Vub1M1MDRSbXpM
+            dnl1Y29tbXY2Q3dsUDBYMjI2OWI3QXMKrS02rnZi3z7BKu2Dqh7MvPlI3nHWYtZo
+            v36zuIY+F4Wtc8rWd04K3Ut3uHEsDAVHbi4tm0uD0NHSq6o2zkFfkQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-05-20T14:55:00Z"
+    mac: ENC[AES256_GCM,data:0S+vxLtxWmSpsg6Nml8PJFf+tXiK/RFE+l4d+8VX7iwhM7ZQOc1FmZcFDNN968Gsk+GIpHjEREeUvQkUMfho15p+ruXGL9AorI3RxgN2UnODasP3089Tt1r9jc6HCfJHiSWexWME5R0vBBNSy+BYu1IHfGJ+tfE3nai+HkpOZXU=,iv:czsZrUqnTTaLwTFCyBsu83a/ePfhg7oG718DNXkB63o=,tag:pId/SqGV5+drYhlhAPHSsA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

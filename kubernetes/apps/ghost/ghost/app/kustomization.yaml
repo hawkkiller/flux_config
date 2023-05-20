@@ -6,5 +6,5 @@ resources:
   - "./sealed-secret-ghost-backup.yaml"
   - "./sealed-secret-ghost-mail.yaml"
   - "./sealed-secret-mysql-ghost.yaml"
-  - "./secret.sops.yaml"
+  - "./test.sops.yaml"
   

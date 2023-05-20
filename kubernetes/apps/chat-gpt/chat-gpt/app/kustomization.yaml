@@ -4,4 +4,3 @@ namespace: chat-gpt
 resources:
   - configmap.yaml
   - helmrelease.yaml
-  - ingress.yaml

@@ -11,3 +11,7 @@ spec:
     name: flux-system
   path: ./kubernetes/apps
   prune: true
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-age

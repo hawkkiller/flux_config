@@ -30,7 +30,7 @@ spec:
     service:
       create: true
       type: ClusterIP
-      port: 9001
+      port: 9999
 
   valuesFrom:
     - kind: Secret

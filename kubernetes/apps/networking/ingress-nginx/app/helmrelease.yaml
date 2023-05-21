@@ -29,4 +29,4 @@ spec:
         tag: 2.24.0
       extraEnvs:
         - { name: TEMPLATE_NAME, value: ghost }
-        - { name: SHOW_DETAILS, value: "true" }
+        - { name: SHOW_DETAILS, value: "false" }

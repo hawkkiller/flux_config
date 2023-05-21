@@ -22,3 +22,11 @@ spec:
         default-ssl-certificate: "networking/themisha-dev-wild"
     admissionWebhooks:
       enabled: false
+    defaultBackend:
+      enabled: true
+      image:
+        repository: ghcr.io/tarampampam/error-pages
+        tag: 2.24.0
+      extraEnvs:
+        - { name: TEMPLATE_NAME, value: ghost }
+        - { name: SHOW_DETAILS, value: "true" }

@@ -22,6 +22,7 @@ spec:
       className: nginx
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
+        external-dns.kubernetes.io/target: weave.lazebny.io
       hosts: 
         - host: weave.lazebny.io
           paths: 

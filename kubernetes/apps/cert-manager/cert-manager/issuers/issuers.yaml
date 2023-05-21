@@ -39,6 +39,6 @@ spec:
       - dns01:
           cloudflare: 
             email: mislad09@gmail.com
-            apiKeySecretRef:
+            apiTokenSecretRef:
               name: cloudflare-api-token
               key: api-token

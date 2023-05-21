@@ -8,3 +8,4 @@ resources:
   - "./sealed-secrets.yaml"
   - "./selfhosted-manifests.yaml"
   - "./external-dns.yaml"
+  - "./stakater.yaml"

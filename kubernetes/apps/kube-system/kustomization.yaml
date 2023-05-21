@@ -5,3 +5,4 @@ resources:
   - "./namespace.yaml"
   # Flux kustomizations
   - "./sealed-secrets/ks.yaml"
+  - "./reloader/ks.yaml"

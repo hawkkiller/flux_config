@@ -17,6 +17,7 @@ data:
         annotations:
           nginx.ingress.kubernetes.io/rewrite-target: /$1
           external-dns.kubernetes.io/target: lazebny.io
+          external-dns.alpha.kubernetes.io/hostname: lazebny.io
         hosts:
         - host: themisha.dev
           paths:

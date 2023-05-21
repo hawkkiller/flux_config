@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - "./configmap-ghost-value-overrides.yaml"
   - "./helmrelease.yaml"
-  - "./basic-auth.yaml"
   

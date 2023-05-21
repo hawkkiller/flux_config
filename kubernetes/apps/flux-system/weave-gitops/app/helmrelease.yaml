@@ -23,7 +23,7 @@ spec:
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
       hosts: 
-        - host: weave.themisha.dev
+        - host: weave.lazebny.io
           paths: 
             - path: /(.*)
               pathType: Prefix

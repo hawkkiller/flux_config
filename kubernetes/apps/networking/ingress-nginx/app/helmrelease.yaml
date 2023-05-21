@@ -19,7 +19,7 @@ spec:
       service:
         type: "LoadBalancer"
       extraArgs:
-        default-ssl-certificate: "networking/themisha-dev-wild"
+        default-ssl-certificate: "networking/lazebny-io"
     admissionWebhooks:
       enabled: false
     defaultBackend:

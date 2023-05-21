@@ -8,7 +8,7 @@ data:
     ghost:
       nodeEnv: production
       timezone: UTC
-      url: https://themisha.dev
+      url: https://lazebny.io
       storage: 1Gi
       mount: /var/lib/ghost/content
       ingress:
@@ -18,7 +18,7 @@ data:
           nginx.ingress.kubernetes.io/rewrite-target: /$1
           external-dns.kubernetes.io/target: lazebny.io
         hosts:
-        - host: themisha.dev
+        - host: lazebny.io
           paths:
           - path: /(.*)
             pathType: Prefix
@@ -30,7 +30,7 @@ data:
         type: ClusterIP
         port: 80
       mail:
-        from: "themisha.dev <"
+        from: "lazebny.io <"
         transport: SMTP
         host: smtp.gmail.com
         port: 587

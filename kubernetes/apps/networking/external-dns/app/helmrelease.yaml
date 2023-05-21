@@ -35,7 +35,7 @@ spec:
         valueFrom:
           secretKeyRef:
             name: cloudflare-api-token
-            key: api-key
+            key: api-token
     extraArgs:
       - --annotation-filter=external-dns.kubernetes.io/target
       - --cloudflare-proxied

@@ -20,7 +20,7 @@ tasks:
     desc: "Create Talos OS image in Hetzner Cloud"
     summary: > 
       Launches server in Hetzner Cloud, installs Talos OS, and creates image.
-      Needs [HCLOUD_TOKEN] in .env file.
+      Needs [HCLOUD_TOKEN] in .env file or environment variable.
     dotenv:
       - ".env"
     cmds:
@@ -32,7 +32,7 @@ tasks:
     desc: "Provision Kubernetes cluster in Hetzner Cloud"
     summary: > 
       Creates Kubernetes cluster in Hetzner Cloud. 
-      Needs [HCLOUD_TOKEN] and [TF_VAR_hcloud_image] in .env file.
+      Needs [HCLOUD_TOKEN] and [TF_VAR_hcloud_image] in .env file or environment variable.
       Must be ran after provision:packer.
     dotenv:
       - ".env"

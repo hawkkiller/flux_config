@@ -15,3 +15,29 @@ tasks:
     cmds:
       - flux bootstrap git --url=$REPOSITORY --branch=$BRANCH --path=kubernetes/flux/config --private-key-file=$KEYFILE
     silent: true
+
+  provision:packer:
+    desc: "Create Talos OS image in Hetzner Cloud"
+    summary: > 
+      Launches server in Hetzner Cloud, installs Talos OS, and creates image.
+      Needs [HCLOUD_TOKEN] in .env file.
+    dotenv:
+      - ".env"
+    cmds:
+      - if [[ -z "$HCLOUD_TOKEN" ]]; then echo "HCLOUD_TOKEN env variable must be set!"; exit 1; fi
+      - packer build provision/packer
+    silent: true
+  
+  provision:terraform:
+    desc: "Provision Kubernetes cluster in Hetzner Cloud"
+    summary: > 
+      Creates Kubernetes cluster in Hetzner Cloud. 
+      Needs [HCLOUD_TOKEN] and [TF_VAR_hcloud_image] in .env file.
+      Must be ran after provision:packer.
+    dotenv:
+      - ".env"
+    silent: true
+    cmds:
+      - terraform init provision/terraform
+      - terraform plan -var-file=three_worker.tfvars provision/terraform
+      - terraform apply -var-file=three_worker.tfvars provision/terraform

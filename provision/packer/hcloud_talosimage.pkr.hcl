@@ -9,20 +9,25 @@ packer {
   }
 }
 
+variable "arch" {
+  type    = string
+  default = "arm64"
+}
+
 variable "talos_version" {
   type    = string
   default = "v1.4.4"
 }
 
 locals {
-  image = "https://github.com/siderolabs/talos/releases/download/${var.talos_version}/hcloud-arm64.raw.xz"
+  image = "https://github.com/siderolabs/talos/releases/download/${var.talos_version}/hcloud-${var.arch}.raw.xz"
 }
 
 source "hcloud" "talos" {
   rescue       = "linux64"
   image        = "debian-11"
   location     = "fsn1"
-  server_type  = "cx11"
+  server_type  = "cax11"
   ssh_username = "root"
 
   snapshot_name = "talos system disk ${var.talos_version}"
@@ -30,7 +35,7 @@ source "hcloud" "talos" {
     type    = "infra",
     os      = "talos",
     version = "${var.talos_version}",
-    arch    = "arm64",
+    arch    = "${var.arch}",
   }
 }
 

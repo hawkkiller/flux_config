@@ -16,7 +16,7 @@ tasks:
       - flux bootstrap git --url=$REPOSITORY --branch=$BRANCH --path=kubernetes/flux/config --private-key-file=$KEYFILE
     silent: true
 
-  provision:packer:
+  provision:packer:run:
     desc: "Create Talos OS image in Hetzner Cloud"
     summary: >
       Launches server in Hetzner Cloud, installs Talos OS, and creates image.
@@ -27,6 +27,14 @@ tasks:
       - if [[ -z "$HCLOUD_TOKEN" ]]; then echo "HCLOUD_TOKEN env variable must be set!"; exit 1; fi
       - packer build provision/packer
     silent: true
+    
+  provision:terraform:init:
+    desc: "Initialize Terraform"
+    summary: >
+      Initializes Terraform. 
+    silent: true
+    cmds:
+      - terraform -chdir=provision/terraform init
 
   provision:terraform:apply:
     desc: "Provision Kubernetes cluster in Hetzner Cloud"
@@ -36,8 +44,6 @@ tasks:
       Must be ran after provision:packer.
     silent: true
     cmds:
-      - terraform -chdir=provision/terraform init
-      - terraform -chdir=provision/terraform plan -var-file=variables.tfvars
       - terraform -chdir=provision/terraform apply -var-file=variables.tfvars
   
   provision:terraform:destroy:

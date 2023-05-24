@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 tasks:
   flux:secret:
@@ -18,7 +18,7 @@ tasks:
 
   provision:packer:
     desc: "Create Talos OS image in Hetzner Cloud"
-    summary: > 
+    summary: >
       Launches server in Hetzner Cloud, installs Talos OS, and creates image.
       Needs [HCLOUD_TOKEN] in .env file or environment variable.
     dotenv:
@@ -27,17 +27,23 @@ tasks:
       - if [[ -z "$HCLOUD_TOKEN" ]]; then echo "HCLOUD_TOKEN env variable must be set!"; exit 1; fi
       - packer build provision/packer
     silent: true
-  
-  provision:terraform:
+
+  provision:terraform:apply:
     desc: "Provision Kubernetes cluster in Hetzner Cloud"
-    summary: > 
+    summary: >
       Creates Kubernetes cluster in Hetzner Cloud. 
-      Needs [HCLOUD_TOKEN] and [TF_VAR_hcloud_image] in .env file or environment variable.
+      Needs [HCLOUD_TOKEN] and [TF_VAR_hcloud_image] in variables.tfvars file.
       Must be ran after provision:packer.
-    dotenv:
-      - ".env"
     silent: true
     cmds:
-      - terraform init provision/terraform
-      - terraform plan -var-file=three_worker.tfvars provision/terraform
-      - terraform apply -var-file=three_worker.tfvars provision/terraform
+      - terraform -chdir=provision/terraform init
+      - terraform -chdir=provision/terraform plan -var-file=variables.tfvars
+      - terraform -chdir=provision/terraform apply -var-file=variables.tfvars
+  
+  provision:terraform:destroy:
+    desc: "Destroy Kubernetes cluster in Hetzner Cloud"
+    summary: >
+      Destroys Kubernetes cluster in Hetzner Cloud. 
+    silent: true
+    cmds:
+      - terraform -chdir=provision/terraform destroy -var-file=variables.tfvars

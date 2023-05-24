@@ -30,6 +30,7 @@ source "hcloud" "talos" {
     type    = "infra",
     os      = "talos",
     version = "${var.talos_version}",
+    arch    = "arm64",
   }
 }
 

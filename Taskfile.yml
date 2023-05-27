@@ -15,41 +15,22 @@ tasks:
     cmds:
       - flux bootstrap git --url=$REPOSITORY --branch=$BRANCH --path=kubernetes/flux/config --private-key-file=$KEYFILE
     silent: true
-
-  provision:packer:run:
-    desc: "Create Talos OS image in Hetzner Cloud"
-    summary: >
-      Launches server in Hetzner Cloud, installs Talos OS, and creates image.
-      Needs [HCLOUD_TOKEN] in .env file or environment variable.
-    dotenv:
-      - ".env"
-    cmds:
-      - if [[ -z "$HCLOUD_TOKEN" ]]; then echo "HCLOUD_TOKEN env variable must be set!"; exit 1; fi
-      - packer build provision/packer
-    silent: true
-    
-  provision:terraform:init:
-    desc: "Initialize Terraform"
-    summary: >
-      Initializes Terraform. 
-    silent: true
-    cmds:
-      - terraform -chdir=provision/terraform init
-
-  provision:terraform:apply:
-    desc: "Provision Kubernetes cluster in Hetzner Cloud"
-    summary: >
-      Creates Kubernetes cluster in Hetzner Cloud. 
-      Needs [HCLOUD_TOKEN] and [TF_VAR_hcloud_image] in variables.tfvars file.
-      Must be ran after provision:packer.
-    silent: true
-    cmds:
-      - terraform -chdir=provision/terraform apply -var-file=variables.tfvars
   
-  provision:terraform:destroy:
-    desc: "Destroy Kubernetes cluster in Hetzner Cloud"
-    summary: >
-      Destroys Kubernetes cluster in Hetzner Cloud. 
+  provision:cluster:
+    desc: "Provision the cluster"
+    summary: > 
+      Provision the cluster using pulumi: create all the resources in hcloud.
     silent: true
+    dir: "provision/pulumi"
+    cmds: 
+      # Skipping preview because of https://github.com/pulumi/pulumi-hcloud/issues/175
+      - pulumi up --yes --skip-preview
+  
+  provision:destroy:
+    desc: "Destroy the cluster"
+    summary: > 
+      Destroy the cluster using pulumi: destroy all the resources in hcloud.
+    silent: true
+    dir: "provision/pulumi"
     cmds:
-      - terraform -chdir=provision/terraform destroy -var-file=variables.tfvars
+      - pulumi destroy --yes

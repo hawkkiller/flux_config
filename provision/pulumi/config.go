@@ -10,6 +10,7 @@ import (
 type PulumiConfig struct {
 	Network       NetworkConfig  `yaml:"network"`
 	ControlPlanes []ControlPlane `yaml:"control_planes"`
+	Workers       []Worker       `yaml:"workers"`
 	ImageID       string         `yaml:"image_id"`
 	ClusterName   string         `yaml:"cluster_name"`
 }
@@ -18,7 +19,6 @@ type NetworkConfig struct {
 	IpRange      string             `yaml:"ip_range"`
 	Name         string             `yaml:"name"`
 	Zone         string             `yaml:"zone"`
-	Subnet       SubnetConfig       `yaml:"subnet"`
 	LoadBalancer LoadBalancerConfig `yaml:"lb"`
 }
 
@@ -38,7 +38,14 @@ type ControlPlane struct {
 	Name     string `yaml:"name"`
 	Type     string `yaml:"type"`
 	Location string `yaml:"location"`
-	Ip       string `yaml:"ip"`
+	// Ip       string `yaml:"ip"`
+}
+
+type Worker struct {
+	Name     string `yaml:"name"`
+	Type     string `yaml:"type"`
+	Location string `yaml:"location"`
+	// Ip       string `yaml:"ip"`
 }
 
 func ParseConfig() (*PulumiConfig, error) {

@@ -24,7 +24,7 @@ tasks:
     dir: "provision/pulumi"
     cmds: 
       # Skipping preview because of https://github.com/pulumi/pulumi-hcloud/issues/175
-      - pulumi up --yes --skip-preview
+      - pulumi up --yes --skip-preview -v 5
   
   provision:destroy:
     desc: "Destroy the cluster"

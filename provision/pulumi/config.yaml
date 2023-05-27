@@ -2,9 +2,6 @@ network:
   ip_range: "10.0.0.0/16"
   name: "hcloud-network"
   zone: "eu-central"
-  subnet:
-    name: "hcloud-subnet"
-    ip_range: "10.0.0.0/24"
   lb:
     name: "hcloud-lb"
     type: "lb11"
@@ -14,6 +11,9 @@ control_planes:
   - name: "hcloud-control-plane-1"
     type: "cax21"
     location: "fsn1"
-    ip: "10.0.0.3"
+workers:
+  - name: "hcloud-worker-1"
+    type: "cax11"
+    location: "fsn1"
 image_id: "112442176"
 cluster_name: "lazebny-io-cluster"

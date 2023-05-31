@@ -1,0 +1,63 @@
+apiVersion: scheduling.k8s.io/v1
+kind: PriorityClass
+metadata:
+  name: overprovisioning
+value: -1
+globalDefault: false
+description: "Priority class used by overprovisioning."
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: overprovisioning
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: overprovisioning
+  template:
+    metadata:
+      labels:
+        run: overprovisioning
+    spec:
+      # nodeSelector:
+      #   node.cloudprovider.kubernetes.io/platform: hcloud
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  # - key: node.kubernetes.io/instance-type
+                  #   operator: Exists
+                  # - key: instance.hetzner.cloud/is-root-server
+                  #   operator: NotIn
+                  #   values:
+                  #     - "true"
+                  - key: hcloud/node-group
+                    operator: Exists
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchExpressions:
+                  - key: run
+                    operator: In
+                    values:
+                      - overprovisioning
+      priorityClassName: overprovisioning
+      containers:
+      - name: reserve-resources
+        image: k8s.gcr.io/pause
+        resources:
+          requests:
+            cpu: "700m"
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+            drop:
+            - ALL
+          runAsNonRoot: true
+          runAsUser: 1000
+          seccompProfile:
+            type: RuntimeDefault

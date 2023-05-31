@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 tasks:
   flux:secret:
@@ -15,3 +15,22 @@ tasks:
     cmds:
       - flux bootstrap git --url=$REPOSITORY --branch=$BRANCH --path=kubernetes/flux/config --private-key-file=$KEYFILE
     silent: true
+  
+  provision:cluster:
+    desc: "Provision the cluster"
+    summary: > 
+      Provision the cluster using pulumi: create all the resources in hcloud.
+    silent: true
+    dir: "provision/pulumi"
+    cmds: 
+      # Skipping preview because of https://github.com/pulumi/pulumi-hcloud/issues/175
+      - pulumi up --yes --skip-preview -v 5
+  
+  provision:destroy:
+    desc: "Destroy the cluster"
+    summary: > 
+      Destroy the cluster using pulumi: destroy all the resources in hcloud.
+    silent: true
+    dir: "provision/pulumi"
+    cmds:
+      - pulumi destroy --yes

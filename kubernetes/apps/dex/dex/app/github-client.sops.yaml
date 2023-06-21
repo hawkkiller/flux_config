@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: github-client
+    namespace: dex
 type: Opaque
 data:
     client-id: ENC[AES256_GCM,data:3KV02KFKTzVDyDVkbr49GtvILU1Y8Ua5BMuLeQ==,iv:7lhDt7IVvBODwCQgbRCcC7Wk7CQ0SIN2VA2kZBmkanY=,tag:+xfwXd36L0axU+/uKw0F0w==,type:str]

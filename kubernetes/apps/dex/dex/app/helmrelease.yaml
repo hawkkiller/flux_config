@@ -53,7 +53,7 @@ spec:
           clientSecret: $GITHUB_CLIENT_SECRET
           redirectURI: https://dex.lazebny.io/callback
           orgs:
-          - name: hawkkiller
+          - name: sizzleco
 
     ingress:
       enabled: true

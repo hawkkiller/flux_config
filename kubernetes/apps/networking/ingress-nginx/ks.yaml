@@ -25,7 +25,6 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-ingress-nginx-certificates
-    - name: cluster-apps-sealed-secrets
   sourceRef:
     kind: GitRepository
     name: flux-system

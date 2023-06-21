@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - "./oidc-auth.sops.yaml"
   - "./helmrelease.yaml"
+  - "./rbac.yaml"

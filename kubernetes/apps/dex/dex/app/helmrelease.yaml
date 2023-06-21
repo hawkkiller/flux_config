@@ -42,12 +42,7 @@ spec:
         id: weave-gitops
         secret: AiAImuXKhoI5ApvKWF988txjZ+6rG3S7o6X5En
         redirectURIs:
-        - 'https://localhost:9001/oauth2/callback'
-        - 'https://0.0.0.0:9001/oauth2/callback'
-        - 'http://0.0.0.0:9001/oauth2/callback'
-        - 'http://localhost:4567/oauth2/callback'
-        - 'https://localhost:4567/oauth2/callback'
-        - 'http://localhost:3000/oauth2/callback'
+        - 'https://weave.lazebny.io/oauth2/callback'
 
       connectors:
       - type: github
@@ -63,6 +58,10 @@ spec:
     ingress:
       enabled: true
       className: nginx
+      annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /$1
+        external-dns.kubernetes.io/target: dex.lazebny.io
+      
       hosts:
         - host: dex.lazebny.io
           paths:

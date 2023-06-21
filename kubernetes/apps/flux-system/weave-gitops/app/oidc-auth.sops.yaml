@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: oidc-auth
+    namespace: flux-system
+type: Opaque
+data:
+    issuerURL: ENC[AES256_GCM,data:Jup2ObJCiVKY0ha6ELmXsbUaBe4poNrZN4MZDDEkCK0=,iv:vZq3kODqEAhN/nsYEqdRwQxuLj/04OMHVxDvrXxltxk=,tag:Jmz43pdGtVpXALRLPC1amw==,type:str]
+    clientID: ENC[AES256_GCM,data:D4UKKZd5E402KB+ZDU4cuw==,iv:XO6UajTKx1EVZK38ltkgQXlWq+RM93xC+j8VNgrz6qo=,tag:LW6rhMOooGjYcpl66XcNkQ==,type:str]
+    clientSecret: ENC[AES256_GCM,data:YHMXe7wJ/DiYTUetq2weFVvz2hA/3BzOMVLx4unDTlS7eaDxZxvlwu9Vp5NhOQcsbLeZHQ==,iv:zg9QPxGIWAxxPsq/Ij5aAEFwuPYzE4c0q3Ow9vzrEbw=,tag:0bxCqeR7Ah8W6F69zP213A==,type:str]
+    redirectURL: ENC[AES256_GCM,data:qgKcKAKr7jMw/PoZ1HzTp3cpDm2XoQGbD/lOBHdFcLq5YmkVYMrVYADfjkO8fZFMKRGU0bqy9do=,iv:+TsvBKz0i9z+XJzok25oFGHlVzuseAcVd1qa27zfVnY=,tag:BDIs8KatECQDyqki+SpWuA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1wuhwmhppza9qpv9xmu9wp8pt399q687y28ftwjkhx7tv4cs7vf3qmt8fr7
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBwNEo4cUdmb3VzTS9vRWg5
+            SDVFQUVKeEFqN3MzczZDMDV2d0Q3R0tiZmpZCmwrQ0lYRjJZMHYyT29pWEptaVNn
+            QW9PT1gyZ0tTMDF4MWREMFAyb3J5aFUKLS0tIEd0SDMxOGwwTWxSQmlkM1lsZmFL
+            V0RQL3JtUmw5c0JwYzBtR1RiMDdGSmsKOWRtgUeGKhLX/qLOE8wsI+qZ4dCD+9L6
+            7+unL/eSy7k6OPxlgN/1FwNZU3+qN62cYc3XoX8YAeNJSlBlKdAHKA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-06-21T16:34:21Z"
+    mac: ENC[AES256_GCM,data:ALCy3E5OQJABapjnTRA6PRScCK1Kbttx0FVLDrobNxZO0uvAn8goK8Y5eNIY7iWht30lR6fhMXYa19EbolKZi5XXPiQhxceJLWm45O5V+hSeOPLjZXqk8/tZH7kJrG85RCMQc0Z3wsbVkJX2BppoOnFkeGnIoM8apdEN7hS2Gk4=,iv:2oyi6044yxjTe+NjItKhQ0XNgClzTtAhw62XNuyYGC0=,tag:V8N70O7nnscFKasWHZUs0w==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

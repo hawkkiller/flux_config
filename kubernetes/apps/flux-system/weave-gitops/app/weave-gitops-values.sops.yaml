@@ -1,0 +1,28 @@
+apiVersion: v1
+data:
+    password: ENC[AES256_GCM,data:KY8IRqp1MmPOP9gN/qFbnA/+QvwTg17gfKON8gHnZiigbzxhtCrPiHZq6fvDiDggJTXSv5UrNHS9Koh3v/Dv7C5R4wsjwYTiqVQFR3MULbg=,iv:rOReHFTpq+5gkS1S9UeyXzAJl//Zpzbp76uOY0WsCYg=,tag:kJLlDPJLity65CdJIVNR5A==,type:str]
+    username: ENC[AES256_GCM,data:xu3HLN9aFuM=,iv:9YRq7qujaLDIfFarTbUO/k+axZeiB6Dx/BPq9X+0BoQ=,tag:GGLThTgFpvT78k10aizolg==,type:str]
+kind: Secret
+metadata:
+    name: weave-gitops-values
+    namespace: flux-system
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1wuhwmhppza9qpv9xmu9wp8pt399q687y28ftwjkhx7tv4cs7vf3qmt8fr7
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBkdUNVV3FwVnRUMkpVZUZR
+            RENaZmdMYko3SFZqM3NmODBxQzlhU1cwQ3dnCk5kbGp1bHZDdll4TG1Ub0Exb0o1
+            NWZKNXhRQ1Z6b0trZTJIS1hLRkhHQ28KLS0tIHBCc1ZLcHNPU0c4dzhobmhaWW51
+            N2YxTHBXZ0txMm1rajljR0l1VTU4d3cKayfN5bp+Lf+Fmu9VeJDyMUl9zcUW5gYk
+            wZc598uhC3Xv80zF1+JbS2LIKPQfiTgzlSnXYzqeHIZcYPkJ3Q5Tfw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-06-21T13:28:01Z"
+    mac: ENC[AES256_GCM,data:JS814wVBEs9rfy17WwJMiOQkqPS3LD5d96X2sD+ZMsG+p9ngnpTH7rvf0RrFZEIMA2sNgpqPlip69QmgMmolOoDVqPatzPMl/AV/YLVJl5J343Usp9kBG+UcJrmQ0+azIzMpCd9/Wpf/Ca8K6at4y+ZKrp2E1LftbE8Hf4tmuOQ=,iv:FY7GEfEm606QpGrSvQyPdGnb8s2wEo32WYSC/7qUyZs=,tag:4qWTYVlLlepIGZiqVtSxpw==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

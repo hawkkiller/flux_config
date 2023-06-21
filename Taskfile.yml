@@ -1,36 +1,32 @@
 version: "3"
 
 tasks:
-  flux:secret:
-    desc: "Create secret for the Git repository"
-    dotenv: [".env"]
-    cmds:
-      - flux create secret git flux-system-creds --url=$REPOSITORY --private-key-file=$KEYFILE
+  init:pre:
+    prompt: "Pre-initing..."
     silent: true
-
-  flux:bootstrap:
-    desc: "Bootstrap Flux"
     dotenv:
       - ".env"
     cmds:
-      - flux bootstrap git --url=$REPOSITORY --branch=$BRANCH --path=kubernetes/flux/config --private-key-file=$KEYFILE
+      - echo "Pre-initing..."
+      - echo "Setup sops private key"
+      # create flux-system namespace if not exists
+      - kubectl create ns flux-system --dry-run=client -o yaml | kubectl apply -f -
+      - cat $AGEKEY_PATH | kubectl create secret generic sops-age --from-file=age.agekey=/dev/stdin -n flux-system
+  init:post:
+    prompt: "Post-initing..."
     silent: true
-  
-  provision:cluster:
-    desc: "Provision the cluster"
-    summary: > 
-      Provision the cluster using pulumi: create all the resources in hcloud.
-    silent: true
-    dir: "provision/pulumi"
-    cmds: 
-      # Skipping preview because of https://github.com/pulumi/pulumi-hcloud/issues/175
-      - pulumi up --yes --skip-preview -v 5
-  
-  provision:destroy:
-    desc: "Destroy the cluster"
-    summary: > 
-      Destroy the cluster using pulumi: destroy all the resources in hcloud.
-    silent: true
-    dir: "provision/pulumi"
+    dotenv:
+      - ".env"
     cmds:
-      - pulumi destroy --yes
+      - echo "Post-initing..."
+      - echo "Setup flux-system"
+      - |
+        flux bootstrap github \
+          --owner=$GITHUB_USER \
+          --repository=$GITHUB_REPO \
+          --branch=main \
+          --path=./kubernetes/flux \
+          --personal \
+          --components-extra=image-reflector-controller,image-automation-controller \
+          --version=latest \
+          --verbose

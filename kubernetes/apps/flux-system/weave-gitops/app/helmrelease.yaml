@@ -16,9 +16,6 @@ spec:
         name: weave-gitops
         namespace: flux-system
   interval: 1h0m0s
-  envVars:
-  - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
-    value: "Login with ACME"
   values:
     ingress:
       enabled: true
@@ -31,6 +28,9 @@ spec:
           paths: 
             - path: /(.*)
               pathType: Prefix
+    envVars:
+      - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
+        value: "Login with ACME"
     service:
       create: true
       type: ClusterIP

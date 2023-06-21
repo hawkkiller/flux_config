@@ -6,7 +6,7 @@ metadata:
   namespace: flux-system
 subjects:
   - kind: Group
-    name: sizzleco
+    name: sizzleco:Contributors
     namespace: flux-system
 roleRef:
   kind: Role

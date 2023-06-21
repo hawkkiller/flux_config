@@ -12,6 +12,7 @@ tasks:
       # create flux-system namespace if not exists
       - kubectl create ns flux-system --dry-run=client -o yaml | kubectl apply -f -
       - cat $AGEKEY_PATH | kubectl create secret generic sops-age --from-file=age.agekey=/dev/stdin -n flux-system
+      - flux check --pre
   init:post:
     prompt: "Post-initing..."
     silent: true

@@ -9,3 +9,4 @@ resources:
   - "./selfhosted-manifests.yaml"
   - "./external-dns.yaml"
   - "./stakater.yaml"
+  - "./dex.yaml"

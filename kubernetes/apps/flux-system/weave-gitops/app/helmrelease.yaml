@@ -32,8 +32,3 @@ spec:
       create: true
       type: ClusterIP
       port: 9999
-
-  valuesFrom:
-    - kind: Secret
-      name: weave-gitops-values
-      valuesKey: values.yaml

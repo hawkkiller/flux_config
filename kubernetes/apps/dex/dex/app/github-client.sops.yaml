@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: github-client
+type: Opaque
+data:
+    client-id: ENC[AES256_GCM,data:3KV02KFKTzVDyDVkbr49GtvILU1Y8Ua5BMuLeQ==,iv:7lhDt7IVvBODwCQgbRCcC7Wk7CQ0SIN2VA2kZBmkanY=,tag:+xfwXd36L0axU+/uKw0F0w==,type:str]
+    client-secret: ENC[AES256_GCM,data:JXfyIv+DkCAy4L6aOXL7fmobQTOC7yJTMp9w3xuKRqjwfn/6j0+t/s2AVXYIK8os5Zps/xhx3cI=,iv:khu6+K/IsiJwijOjbKIY6pQwrf2tbY/GsWPX4Dh990M=,tag:XjOk6tGcziSNynQzb3mbQg==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1wuhwmhppza9qpv9xmu9wp8pt399q687y28ftwjkhx7tv4cs7vf3qmt8fr7
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBHUXZTTW83dkJoQm5vYjEx
+            VXVlTFlIT1hvZHRTN203UG90U1lnMGx2Y2pNCjcrVUpaNGFKck5PYmdrZy92aU8x
+            R0tQRW5OaGR2eXduMFQ3S1ZTZnRkRkkKLS0tIGxTaW8ydXlsTjgwVm1CRW5NUVBn
+            dWVpS2o0SUxoTVZQdk5JMFZ5MjlXWFEKmMLAXIcNfjg0ctzyE8ve0MMksKJ6xyJH
+            v2IDbpIRdmjSvaJubmTxPClTDzz5MIeoNkebHGXjyi+TqQGjiwE2PQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-06-21T15:56:37Z"
+    mac: ENC[AES256_GCM,data:cEfayq56+plkb6CAOrWI4ceAC1TKxv1PxQB1A6Wy0wBJEVe1dNKIhrxMEkYxQWJcxZVdhbPOfytuxx6lqCeBOYlHR32HFiWZ8gb+tDWNcFlKuZFlR09azWDRM7xv7dwI4sDMD7no+mgZS/R5liAzb/+pRgsWwI7xhN+frEAgtJU=,iv:8wzOTGfviJxOEQhKsGqvHP/Mwcpw102kjKQsB2rYsKc=,tag:ZAtVTQUuOzaK6ih74NFYBA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

@@ -16,4 +16,4 @@ spec:
       namespace: chat-gpt
   interval: 15m
   retryInterval: 1m
-  timeout: 2m
+  timeout: 5m

@@ -1,22 +1,7 @@
----
 apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
+kind: ClusterRole
 metadata:
-  name: wego-user-read-resources
-  namespace: flux-system
-subjects:
-  - kind: Group
-    name: sizzleco:Contributors
-    namespace: flux-system
-roleRef:
-  kind: Role
-  name: wego-admin-role
-  apiGroup: rbac.authorization.k8s.io
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: wego-admin-role
+  name: wego-admin-cluster-role
   namespace: flux-system
 rules:
   - apiGroups: [""]
@@ -32,8 +17,22 @@ rules:
     resources: [ "helmreleases" ]
     verbs: [ "get", "list", "patch" ]
   - apiGroups: ["source.toolkit.fluxcd.io"]
-    resources: ["buckets", "helmcharts", "gitrepositories", "helmrepositories", "ocirepositories"]
-    verbs: ["get", "list", "patch"]
+    resources: [ "buckets", "helmcharts", "gitrepositories", "helmrepositories", "ocirepositories" ]
+    verbs: [ "get", "list", "patch" ]
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["get", "watch", "list"]
+---
+# Bind the cluster admin role to the wego-admin group
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: wego-cluster-admin
+subjects:
+- kind: Group
+  name: sizzleco:Contributors
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: wego-admin-cluster-role
+  apiGroup: rbac.authorization.k8s.io

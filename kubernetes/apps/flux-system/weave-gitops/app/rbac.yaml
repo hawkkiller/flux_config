@@ -22,6 +22,9 @@ rules:
   - apiGroups: [""]
     resources: ["events"]
     verbs: ["get", "watch", "list"]
+  - apiGroups: ["notification.toolkit.fluxcd.io"]
+    resources: ["providers"]
+    verbs: ["list"]
 ---
 # Bind the cluster admin role to the wego-admin group
 apiVersion: rbac.authorization.k8s.io/v1

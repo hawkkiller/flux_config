@@ -31,10 +31,6 @@ spec:
     envVars:
       - name: WEAVE_GITOPS_FEATURE_OIDC_BUTTON_LABEL
         value: "Login with ACME"
-    service:
-      create: true
-      type: ClusterIP
-      port: 9999
     adminUser:
       create: false
     additionalArgs:

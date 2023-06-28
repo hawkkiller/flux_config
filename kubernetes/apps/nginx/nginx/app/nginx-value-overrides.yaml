@@ -21,7 +21,7 @@ data:
         server_name proxy.lazebny.io;
         listen 0.0.0.0:8080;
 
-        location /discord/ {
+        location ~ /discord/(.*) {
           proxy_pass https://discord.com;
           proxy_set_header Host discord.com;
           proxy_set_header X-Real-IP $remote_addr;

@@ -10,4 +10,4 @@ metadata:
 spec:
   interval: 1h0m0s
   type: oci
-  url: oci://registry-1.docker.io/bitnamicharts/nginx
+  url: oci://registry-1.docker.io/bitnamicharts

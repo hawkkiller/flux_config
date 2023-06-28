@@ -14,9 +14,11 @@ data:
       hostname: proxy.lazebny.io
       path: /(.*)
       pathType: Prefix
-    serverBlock: |
+    serverBlock: |-
       server {
         server_name proxy.lazebny.io;
+        listen 0.0.0.0:8080;
+        root /app;
 
         location /discord/ {
           proxy_pass https://discord.com/api/;

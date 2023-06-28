@@ -20,7 +20,6 @@ data:
       server {
         server_name proxy.lazebny.io;
         listen 0.0.0.0:8080;
-        root /app;
 
         location /discord-api/ {
           proxy_pass https://discord.com/api/;

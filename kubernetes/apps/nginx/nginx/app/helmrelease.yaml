@@ -15,5 +15,5 @@ spec:
   interval: 15m
   valuesFrom:
     - kind: ConfigMap
-      name: ghost-value-overrides
+      name: nginx-value-overrides
       valuesKey: values.yaml

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: myconfigmap
+  name: nginx-value-overrides
   namespace: nginx
 data:
   values.yaml: |

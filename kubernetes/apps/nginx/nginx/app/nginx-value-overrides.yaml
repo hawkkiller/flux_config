@@ -16,10 +16,23 @@ data:
       pathType: Prefix
     serverBlock: |
       server {
+        listen 80;
+        server_name proxy.lazebny.io;
+
         location /discord/ {
-            proxy_pass https://discord.com/api/;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+          proxy_pass https://discord.com/api/;
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        location /discord-ws/ {
+          proxy_pass wss://gateway.discord.gg?v=9&encoding=json&compress=gzip-stream;
+          proxy_http_version 1.1;
+          proxy_set_header Upgrade $http_upgrade;
+          proxy_set_header Connection "upgrade";
+          proxy_set_header Host $host;
+          proxy_set_header X-Real-IP $remote_addr;
+          proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }
       }

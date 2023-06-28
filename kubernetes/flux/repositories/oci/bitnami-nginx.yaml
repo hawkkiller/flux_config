@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/name: bitnami-nginx
     app.kubernetes.io/part-of: bitnami
-  name: nginx
+  name: bitnami-nginx
   namespace: flux-system
 spec:
   interval: 1h0m0s

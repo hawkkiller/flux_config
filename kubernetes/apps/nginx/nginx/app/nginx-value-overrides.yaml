@@ -23,7 +23,7 @@ data:
 
         location /discord-api/ {
           proxy_pass https://discord.com/api/;
-          proxy_set_header Host $host;
+          proxy_set_header Host discord.com;
           proxy_set_header X-Real-IP $remote_addr;
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
           proxy_set_header X-Forwarded-Proto $scheme;
@@ -34,7 +34,7 @@ data:
           proxy_http_version 1.1;
           proxy_set_header Upgrade $http_upgrade;
           proxy_set_header Connection "upgrade";
-          proxy_set_header Host $host;
+          proxy_set_header Host gateway.discord.gg;
           proxy_set_header X-Real-IP $remote_addr;
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         }

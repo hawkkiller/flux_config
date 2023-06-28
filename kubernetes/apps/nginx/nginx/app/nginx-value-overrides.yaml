@@ -16,7 +16,6 @@ data:
       pathType: Prefix
     serverBlock: |
       server {
-        listen 80;
         server_name proxy.lazebny.io;
 
         location /discord/ {

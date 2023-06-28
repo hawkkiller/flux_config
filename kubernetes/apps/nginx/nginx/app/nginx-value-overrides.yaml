@@ -23,6 +23,7 @@ data:
 
         location ~ /discord/(.*) {
           proxy_pass https://discord.com/$1;
+          resolver 1.1.1.1;
           proxy_set_header Host discord.com;
           proxy_set_header X-Real-IP $remote_addr;
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;

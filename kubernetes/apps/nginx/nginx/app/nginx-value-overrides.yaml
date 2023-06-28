@@ -14,6 +14,8 @@ data:
       hostname: proxy.lazebny.io
       path: /(.*)
       pathType: Prefix
+    service:
+      type: ClusterIP
     serverBlock: |-
       server {
         server_name proxy.lazebny.io;

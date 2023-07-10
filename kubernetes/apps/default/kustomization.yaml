@@ -5,3 +5,6 @@ resources:
   - "./namespace.yaml"
   # Flux kustomizations
   - "./chat-gpt/ks.yaml"
+  - "./dex/ks.yaml"
+  - "./ghost/ks.yaml"
+  - "./nginx/ks.yaml"

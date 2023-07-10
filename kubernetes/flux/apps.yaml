@@ -9,7 +9,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./kubernetes/apps
+  path: kubernetes/apps
   prune: true
   decryption:
     provider: sops

@@ -4,7 +4,7 @@ metadata:
   name: cluster-apps-dex
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/default/dex/app
+  path: kubernetes/apps/default/dex/app
   prune: true
   sourceRef:
     kind: GitRepository

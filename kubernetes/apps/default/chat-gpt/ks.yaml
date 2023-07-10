@@ -4,7 +4,7 @@ metadata:
   name: cluster-apps-chat-gpt
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/default/chat-gpt/app
+  path: kubernetes/apps/default/chat-gpt/app
   prune: true
   sourceRef:
     kind: GitRepository

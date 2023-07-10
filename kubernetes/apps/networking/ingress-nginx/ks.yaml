@@ -7,7 +7,7 @@ metadata:
 spec:
   dependsOn:
     - name: cluster-apps-cert-manager-issuers
-  path: ./kubernetes/apps/networking/ingress-nginx/certificates
+  path: kubernetes/apps/networking/ingress-nginx/certificates
   sourceRef:
     kind: GitRepository
     name: flux-system
@@ -28,7 +28,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
-  path: ./kubernetes/apps/networking/ingress-nginx/app
+  path: kubernetes/apps/networking/ingress-nginx/app
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease

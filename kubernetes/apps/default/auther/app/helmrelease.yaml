@@ -1,0 +1,18 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: auther
+spec:
+  releaseName: auther
+  chart:
+    spec:
+      chart: auther
+      version: 0.0.2-alpha
+      sourceRef:
+        kind: HelmRepository
+        name: auther
+        namespace: flux-system
+  interval: 15m
+  install:
+    remediation:
+      retries: 3

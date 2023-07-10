@@ -1,5 +1,0 @@
-_cfgs/
-templates/controlplane.yaml
-controlplane-*.yaml
-worker-*.yaml
-*.patch

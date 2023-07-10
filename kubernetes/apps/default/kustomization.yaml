@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   # Pre Flux kustomizations
-  - "./namespace.yaml"
+  - "namespace.yaml"
   # Flux kustomizations
-  - "./chat-gpt/ks.yaml"
-  - "./dex/ks.yaml"
-  - "./ghost/ks.yaml"
-  - "./nginx/ks.yaml"
+  - "auther/ks.yaml"
+  - "dex/ks.yaml"
+  - "ghost/ks.yaml"
+  - "nginx/ks.yaml"

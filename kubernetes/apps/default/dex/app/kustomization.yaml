@@ -1,5 +1,5 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - github-client.sops.yaml"
-  - helmrelease.yaml"
+  - "github-client.sops.yaml"
+  - "helmrelease.yaml"

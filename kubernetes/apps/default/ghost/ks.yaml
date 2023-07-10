@@ -4,7 +4,7 @@ metadata:
   name: cluster-apps-ghost
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/ghost/ghost/app
+  path: ./kubernetes/apps/default/ghost/app
   prune: true
   sourceRef:
     kind: GitRepository

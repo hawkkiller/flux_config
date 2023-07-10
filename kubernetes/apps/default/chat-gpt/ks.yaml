@@ -1,10 +1,10 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
   name: cluster-apps-chat-gpt
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/chat-gpt/chat-gpt/app
+  path: ./kubernetes/apps/default/chat-gpt/app
   prune: true
   sourceRef:
     kind: GitRepository

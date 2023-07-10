@@ -7,7 +7,6 @@ data:
 kind: Secret
 metadata:
     name: ghost-backup
-    namespace: ghost
 sops:
     kms: []
     gcp_kms: []

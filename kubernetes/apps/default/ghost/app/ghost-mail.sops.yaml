@@ -5,7 +5,6 @@ data:
 kind: Secret
 metadata:
     name: ghost-mail
-    namespace: ghost
 sops:
     kms: []
     gcp_kms: []

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auther-value-overrides
+data:
+  values.yaml: |
+    ingress:
+      enabled: true
+      annotations:
+         kubernetes.io/ingress.class: nginx
+         nginx.ingress.kubernetes.io/rewrite-target: /$1
+         external-dns.kubernetes.io/target: auther.lazebny.io
+      hosts:
+        - host: auther.lazebny.io
+          paths:
+            - path: /(.*)
+              pathType: Prefix
+    secret:
+      ref: "auther-secret"
+      keys:
+        secretKey: SECRET_KEY

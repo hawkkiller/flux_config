@@ -19,3 +19,7 @@ data:
       ref: "auther-secret"
       keys:
         secretKey: SECRET_KEY
+    persistence:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 1Gi

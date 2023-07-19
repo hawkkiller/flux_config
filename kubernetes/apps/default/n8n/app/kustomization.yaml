@@ -3,5 +3,5 @@ kind: Kustomization
 namespace: default
 resources:
   - "helmrelease.yaml"
-  - "n8n-value-override.yaml"
+  - "n8n-value-overrides.yaml"
   

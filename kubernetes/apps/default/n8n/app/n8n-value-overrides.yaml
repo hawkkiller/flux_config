@@ -19,3 +19,4 @@ data:
     extraEnv:
       GENERIC_TIMEZONE: Europe/Warsaw
       TZ: Europe/Warsaw
+    existingSecret: n8n-secrets

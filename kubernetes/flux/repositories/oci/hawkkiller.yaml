@@ -2,8 +2,9 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: open-8gears
+  name: hawkkiller
   namespace: flux-system
 spec:
-  interval: 30m
-  url: https://8gears.container-registry.com/chartrepo/library/
+  interval: 1h0m0s
+  type: oci
+  url: oci://ghcr.io/hawkkiller/charts

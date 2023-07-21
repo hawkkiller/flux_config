@@ -9,7 +9,7 @@ spec:
       chart: n8n
       sourceRef:
         kind: HelmRepository
-        name: open-8gears
+        name: hawkkiller
         namespace: flux-system
   interval: 15m
   valuesFrom:

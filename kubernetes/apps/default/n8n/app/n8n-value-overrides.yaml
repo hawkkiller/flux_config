@@ -16,7 +16,10 @@ data:
             - /(.*)
     persistence:
       enabled: true
-    extraEnv:
-      GENERIC_TIMEZONE: Europe/Warsaw
-      TZ: Europe/Warsaw
-    existingSecret: n8n-secrets
+    env:
+      N8N_BASIC_AUTH_ACTIVE: "false"
+      TZ: UTC
+      N8N_HOST: n8n.lazebny.io
+      N8N_PROTOCOL: https
+      NODE_ENV: production
+      WEBHOOK_URL: https://n8n.lazebny.io

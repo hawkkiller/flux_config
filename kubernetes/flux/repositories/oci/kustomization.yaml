@@ -3,4 +3,4 @@ kind: Kustomization
 resources:
   - "bitnami-nginx.yaml"
   - "weave-gitops.yaml"
-  - "auther.yaml"
+  - "hawkkiller.yaml"

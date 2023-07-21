@@ -8,4 +8,3 @@ resources:
   - "external-dns.yaml"
   - "stakater.yaml"
   - "dex.yaml"
-  - "open-8gears.yaml"

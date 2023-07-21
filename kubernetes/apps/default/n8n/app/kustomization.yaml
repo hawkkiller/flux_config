@@ -4,5 +4,5 @@ namespace: default
 resources:
   - "helmrelease.yaml"
   - "n8n-value-overrides.yaml"
-  - "n8n-secrets.sops.yaml"
+#  - "n8n-secrets.sops.yaml"
   

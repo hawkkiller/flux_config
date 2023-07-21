@@ -4,6 +4,10 @@ metadata:
   name: n8n-value-overrides
 data:
   values.yaml: |
+    image:
+      repository: n8nio/n8n
+      pullPolicy: IfNotPresent
+      tag: "0.236.3"
     ingress:
       enabled: true
       className: nginx
@@ -24,7 +28,3 @@ data:
       N8N_PROTOCOL: https
       NODE_ENV: production
       WEBHOOK_URL: https://n8n.lazebny.io
-    securityContext:
-      runAsUser: 1000
-      runAsGroup: 1000
-      fsGroup: 1000

@@ -7,7 +7,6 @@ data:
     image:
       repository: n8nio/n8n
       pullPolicy: IfNotPresent
-      tag: "0.236.3"
     ingress:
       enabled: true
       className: nginx

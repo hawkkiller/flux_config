@@ -13,7 +13,8 @@ data:
       hosts:
         - host: n8n.lazebny.io
           paths:
-            - /(.*)
+            - path: /(.*)
+              pathType: Prefix
     persistence:
       enabled: true
     env:

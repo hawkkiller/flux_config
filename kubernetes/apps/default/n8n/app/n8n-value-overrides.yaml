@@ -8,8 +8,8 @@ data:
       enabled: true
       className: nginx
       annotations:
-         nginx.ingress.kubernetes.io/rewrite-target: /$1
-         external-dns.kubernetes.io/target: n8n.lazebny.io
+        nginx.ingress.kubernetes.io/rewrite-target: /$1
+        external-dns.kubernetes.io/target: n8n.lazebny.io
       hosts:
         - host: n8n.lazebny.io
           paths:
@@ -18,15 +18,9 @@ data:
     persistence:
       enabled: true
     env:
-      - name: N8N_BASIC_AUTH_ACTIVE
-        value: "false"
-      - name: TZ
-        value: UTC
-      - name: N8N_HOST
-        value: n8n.lazebny.io
-      - name: N8N_PROTOCOL
-        value: https
-      - name: NODE_ENV
-        value: production
-      - name: WEBHOOK_URL
-        value: https://n8n.lazebny.io
+      N8N_BASIC_AUTH_ACTIVE: "false"
+      TZ: UTC
+      N8N_HOST: n8n.lazebny.io
+      N8N_PROTOCOL: https
+      NODE_ENV: production
+      WEBHOOK_URL: https://n8n.lazebny.io

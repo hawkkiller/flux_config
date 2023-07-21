@@ -13,6 +13,7 @@ data:
       annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$1
         external-dns.kubernetes.io/target: n8n.lazebny.io
+        nginx.ingress.kubernetes.io/proxy-body-size: 16m
       hosts:
         - host: n8n.lazebny.io
           paths:

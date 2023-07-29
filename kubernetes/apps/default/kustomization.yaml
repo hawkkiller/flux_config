@@ -9,3 +9,4 @@ resources:
   - "ghost/ks.yaml"
   - "nginx/ks.yaml"
   - "n8n/ks.yaml"
+  - "chat-gpt/ks.yaml"

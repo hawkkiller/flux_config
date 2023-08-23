@@ -23,7 +23,7 @@ data:
             pathType: Prefix
       image:
         repository: ghost
-        tag: 5.44.0-alpine
+        tag: 5.59.4-alpine
         pullPolicy: IfNotPresent
       service:
         type: ClusterIP

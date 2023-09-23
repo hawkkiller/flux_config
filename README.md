@@ -1,17 +1,28 @@
-# Flux configs
+# LazebnyIO
 
-This repository contains a set of Flux configs for deploying various services to a Kubernetes cluster.
+The project is a set of configs to deploy various self-hosted
+applications to Kubernetes Cluster using FluxCD.
 
-## doc is WIP
+## Prerequisites
 
-## Useful commands
+- Kubernetes Cluster
+- Sops installed
+- FluxCD installed (see [FluxCD docs](https://fluxcd.io/docs/get-started/))
 
-- `flux get kustomizations` - list all the kustomizations in the cluster
-- `flux get helmreleases` - list all the Helm releases in the cluster
+## Installation
 
-## DNS01 solver setup
-
-- `gcloud iam service-accounts create dns01-solver --display-name "dns01-solver"`
-- `gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --member serviceAccount:dns01-solver@$PROJECT_ID.iam.gserviceaccount.com \
-  --role roles/dns.admin`
+1. `export GITHUB_TOKEN=<your github token>`
+2. kubectl create ns flux-system --dry-run=client -o yaml | kubectl apply -f -
+3. cat age.agekey |
+kubectl create secret generic sops-age \
+--namespace=flux-system \
+--from-file=age.agekey=/dev/stdin
+4. flux bootstrap github \
+  --token-auth \
+  --owner=hawkkiller \
+  --repository=flux_config \
+  --branch=main \
+  --path=./kubernetes/flux \
+  --components-extra=image-reflector-controller,image-automation-controller \
+  --version=latest \
+  --personal

@@ -18,8 +18,7 @@ spec:
     controller:
       service:
         type: "LoadBalancer"
-        internal:
-          externalTrafficPolicy: Local
+        externalTrafficPolicy: Local
       extraArgs:
         default-ssl-certificate: "networking/lazebny-io"
     admissionWebhooks:

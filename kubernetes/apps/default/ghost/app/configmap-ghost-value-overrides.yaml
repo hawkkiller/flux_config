@@ -62,5 +62,4 @@ data:
       schedule: "20 4 * * *" # every day at 1am
       retentionDays: 10
       ttlSecondsAfterFinished: 86400
-      mysqlPath: "ghost/backup/mysql"
-      ghostPath: "ghost/backup/ghost"
+      

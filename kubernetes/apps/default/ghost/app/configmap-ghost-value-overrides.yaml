@@ -9,7 +9,7 @@ data:
       timezone: UTC
       url: https://lazebny.io
       storage: 1Gi
-      mount: /var/lib/ghost/content
+      mount: /var/lib/ghost
       ingress:
         enabled: true
         ingressClassName: nginx

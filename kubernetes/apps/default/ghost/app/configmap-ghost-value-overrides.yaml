@@ -31,7 +31,7 @@ data:
       mail:
         from: "lazebny.io <"
         transport: SMTP
-        host: smtp.eu.mailgun.org
+        host: smtp.mailgun.org
         port: 587
         auth:
           # or use secret reference for password and

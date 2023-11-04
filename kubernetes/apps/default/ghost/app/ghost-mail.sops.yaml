@@ -1,7 +1,7 @@
 apiVersion: v1
 data:
-    password: ENC[AES256_GCM,data:HvSGI+jcX1TKdh20yPrPrQ1aVBrlPHDxqhKG3w==,iv:BbJTDwPmN6+h3y3d7ehji9FVlr6xUDmxhKk01LO3jBc=,tag:4QQ6z6sq6CMDH/yGwSiyqQ==,type:str]
-    username: ENC[AES256_GCM,data:wPIF+4R0CYzhxXtvbQOyb3ON8hVnE3WyuevFVg==,iv:1xqWMQACD+nXo/DBSO8oqc+9+eH+g7r8QzNZgbOaWXk=,tag:TFrBle97IJU+CpWLwL9cAA==,type:str]
+    password: ENC[AES256_GCM,data:lbKBRlZVnbFC6aMvtnudGE1eBRvWOGV+deBk/8fx0upTkXGYkxt8Cw==,iv:PlcYokNnqGUqOxGUuZJXtcOEsZCUyJadZ99cDdmjHNw=,tag:XO04HdgRH8cx+IYh6ET83g==,type:str]
+    username: ENC[AES256_GCM,data:UXFe2xxU6nm4Sqpl0jGL7FNVSeJQrHl7Ieyofm/xA/f83JDP1/SDOjo35t2F1FxyRpBWjH81CBe8NqHAXHbOK+WYg5E=,iv:yveMyuyRVa6aG0vHahCIEy73NqfGEEd12bx2Ae5D/8s=,tag:Rs/tCUYAqJRZT+uJDkdDaA==,type:str]
 kind: Secret
 metadata:
     name: ghost-mail
@@ -14,14 +14,14 @@ sops:
         - recipient: age1wuhwmhppza9qpv9xmu9wp8pt399q687y28ftwjkhx7tv4cs7vf3qmt8fr7
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5bi9scTd2UmkzcitLdlhS
-            SmJnTVNwNkMxSEVFVzh0alIyV1V5WGxpbFRNCmRnYlM3dmRrWjh4Tk5wTzBOcURj
-            anNRcW52eWNaQndXbzM2RGVuaGJjMk0KLS0tIFpKZmtPSWd5czA3aHNBdm04UTFL
-            bVdPSmZ1UnVDNXc2RjNsK1MvcG96dG8KjKgkocXZzK2Coh9jGbd2X2IaiRBSart5
-            gM7nvSzn/DmmzOTlt4EBBPzRn52HEyk/uj9ML0UNHCXvbqy5DMPdhw==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBDOFNrNENNY0ttc1R5bkRy
+            S25XS0daM0xkdXdEZjUwVklKekE5OG00dWw4CkJ2L0luN1Byek9vNnBDcDBZaWha
+            YTJ3ak1zSDhKbm9WYkROdXU3T3R3bXMKLS0tIHlwZXFoNERtM0pub0V6aldTQ2pO
+            YVZOckxSdnhpN0NLZ2NYRkJtMjRFbU0KSu7TVP+u+k9GpA8FDYvPX5Udn7Xoixgo
+            5EALm3wQutwtxrs253UjQrfF3SV+VG1m68HbQaDlE5eUygwboyMElw==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-10-10T10:07:36Z"
-    mac: ENC[AES256_GCM,data:1ey2L3w1XF6qtnt2PFYwyGgDx3/N+XY0qGmWyKN5kc7G2HUICfRqT43GDmC5f7r3zhB5mvmdXTp0IXf0CC4nQtnQDoWpSlIo6DPaVtzHRO1bxiNFKFaW4fJSA1xIgJR+occh4mrERAxJoZuA4liTk+o2iwQoe3TwSRRqb4TgG8w=,iv:Gv2Rd8M9DySg/VsCPy1aTouTWVdtSSRH0R21D4e4T1c=,tag:oZFPOAWEijX39qCp0lWXZw==,type:str]
+    lastmodified: "2023-11-04T19:15:33Z"
+    mac: ENC[AES256_GCM,data:+S/SFgankDfLvP95pi9W4r8wUUCgW9cjOW603Po8rJu2ZvQkxViY4YRB9p4H+pPiUtyNHew8aPr/qh2+KgJzwFPmaet/m46glSSSUFBw9NFlsXRtNYICq7T2kCruVrEfWc8PVKqT9YAWo1wZ+YE1SYMQYvoQ2Kq70a4ulE01M3E=,iv:lg33/j1XIso2nKsZsMH/Qk7LOoRqZJjuaGN/NDMBnO4=,tag:dw1QrKDI99YhPu5Ke5uWmw==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3

@@ -15,7 +15,7 @@ Steps that should be performed before installation.
 
 ### Secrets
 
-FluxCD supports Mozilla SOPS for secrets encryption. Project uses
+FluxCD supports Mozilla SOPS for secrets encryption. This project uses
 `age` format. To generate a new key pair use the following command:
 
 ```bash
@@ -48,8 +48,8 @@ To create a new secret, create a secret manifest:
 apiVersion: v1
 kind: Secret
 metadata:
-    name: oidc-auth
-    namespace: flux-system
+    name: secret-name
+    namespace: namespace
 type: Opaque
 data:
   KEY: BASE64_ENCODED_VALUE
@@ -86,4 +86,59 @@ kubectl create secret generic sops-age \
   --components-extra=image-reflector-controller,image-automation-controller \
   --version=latest \
   --personal
-  
+
+## Applications
+
+The list of applications that are deployed to the cluster.
+
+### Weave GitOps
+
+Weave GitOps is a program that is used to track deployed
+applications, sources and other Flux components.
+
+Secret needed to deploy Weave GitOps:
+
+```yaml
+# oidc-auth.sops.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+    name: oidc-auth
+    namespace: flux-system
+type: Opaque
+data:
+    # The URL of the issuer, typically the discovery URL without a path
+    issuerURL: aHR0cHM6Ly9kZXgubGF6ZWJueS5pbw==
+    # The client ID that has been setup for Weave GitOps in the issuer (DEX)
+    clientID: BASE64_ENCODED_CLIENT_ID
+    # The client secret that has been setup for Weave GitOps in the issuer (DEX)
+    clientSecret: BASE64_ENCODED_CLIENT_SECRET
+    # The redirect URL that has been setup for Weave GitOps in the issuer, typically the dashboard URL followed by /oauth2/callback
+    redirectURL: aHR0cHM6Ly93ZWF2ZS5sYXplYm55LmlvL29hdXRoMi9jYWxsYmFjaw==
+```
+
+### Dex
+
+Dex is an OpenID Connect provider that is used to authenticate users
+in Weave GitOps.
+
+Secret needed to deploy Dex:
+
+```yaml
+# github-client.sops.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+    name: github-client
+type: Opaque
+data:
+    # To get these values, create a new OAuth app in GitHub and use the client ID and secret
+    # Note, that it is not weave gitops client id and secret
+    # GITHUB_CLIENT_ID
+    client-id: BASE64_ENCODED_GITHUB_CLIENT_ID
+    # GITHUB_CLIENT_SECRET
+    client-secret: BASE64_ENCODED_GITHUB_CLIENT_SECRET
+```
+
+You also need to configure dex/app/helmrelease.yaml to use the correct
+client id and secret and redirect url.

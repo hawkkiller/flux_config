@@ -110,8 +110,10 @@ data:
     # The URL of the issuer, typically the discovery URL without a path
     issuerURL: aHR0cHM6Ly9kZXgubGF6ZWJueS5pbw==
     # The client ID that has been setup for Weave GitOps in the issuer (DEX)
+    # This is configured in dex/app/helmrelease.yaml (staticClients)
     clientID: BASE64_ENCODED_CLIENT_ID
     # The client secret that has been setup for Weave GitOps in the issuer (DEX)
+    # This is configured in dex/app/helmrelease.yaml (staticClients)
     clientSecret: BASE64_ENCODED_CLIENT_SECRET
     # The redirect URL that has been setup for Weave GitOps in the issuer, typically the dashboard URL followed by /oauth2/callback
     redirectURL: aHR0cHM6Ly93ZWF2ZS5sYXplYm55LmlvL29hdXRoMi9jYWxsYmFjaw==

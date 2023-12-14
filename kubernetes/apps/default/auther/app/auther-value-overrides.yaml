@@ -4,6 +4,8 @@ metadata:
   name: auther-value-overrides
 data:
   values.yaml: |
+    image:
+      tag: latest
     ingress:
       enabled: true
       annotations:

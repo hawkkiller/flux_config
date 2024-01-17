@@ -4,3 +4,4 @@ resources:
   # Pre Flux kustomizations
   - "namespace.yaml"
   # Flux kustomizations
+  - "mysql-operator/ks.yaml"

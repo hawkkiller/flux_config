@@ -16,7 +16,7 @@ spec:
       namespace: networking
   interval: 15m
   retryInterval: 1m
-  timeout: 20m
+  timeout: 10m
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -34,4 +34,4 @@ spec:
   wait: true
   interval: 15m
   retryInterval: 1m
-  timeout: 20m
+  timeout: 10m

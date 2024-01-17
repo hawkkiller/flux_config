@@ -6,6 +6,5 @@ resources:
   - "podinfo.yaml"
   - "selfhosted-manifests.yaml"
   - "external-dns.yaml"
-  - "stakater.yaml"
   - "dex.yaml"
   - "mysql-operator.yaml"

@@ -8,3 +8,4 @@ resources:
   - "external-dns.yaml"
   - "stakater.yaml"
   - "dex.yaml"
+  - "mysql-operator.yaml"

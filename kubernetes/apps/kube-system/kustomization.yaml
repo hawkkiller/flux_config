@@ -4,4 +4,3 @@ resources:
   # Pre Flux kustomizations
   - "namespace.yaml"
   # Flux kustomizations
-  - "reloader/ks.yaml"

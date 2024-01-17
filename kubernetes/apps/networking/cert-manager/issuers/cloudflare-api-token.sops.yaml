@@ -4,7 +4,7 @@ data:
 kind: Secret
 metadata:
     name: cloudflare-api-token
-    namespace: cert-manager
+    namespace: networking
 sops:
     kms: []
     gcp_kms: []

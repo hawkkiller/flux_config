@@ -6,3 +6,4 @@ resources:
   # Flux kustomizations
   - "ingress-nginx/ks.yaml"
   - "external-dns/ks.yaml"
+  - "cert-manager/ks.yaml"

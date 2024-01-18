@@ -30,9 +30,9 @@ spec:
     kind: GitRepository
     name: flux-system
   healthChecks:
-    - apiVersion: mysql.oracle.com/v2
-      kind: InnoDBCluster
-      name: mycluster
+    - apiVersion: helm.toolkit.fluxcd.io/v2beta1
+      kind: HelmRelease
+      name: ghost-mysql
       namespace: default
   interval: 15m
   retryInterval: 1m

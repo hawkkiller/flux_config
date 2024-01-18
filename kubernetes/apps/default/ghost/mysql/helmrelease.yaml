@@ -1,0 +1,22 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: ghost-mysql
+spec:
+  releaseName: ghost-mysql
+  chart:
+    spec:
+      chart: mysql-innodbcluster
+      sourceRef:
+        kind: HelmRepository
+        name: mysql-operator
+        namespace: flux-system
+  interval: 15m
+  values:
+    credentials:
+      root:
+        user: "root"
+        password: "password"
+        host: "%"
+    serverInstances: 1
+    routerInstances: 1

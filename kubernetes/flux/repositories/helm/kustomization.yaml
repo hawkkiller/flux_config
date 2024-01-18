@@ -8,4 +8,4 @@ resources:
   - "external-dns.yaml"
   - "dex.yaml"
   - "mysql-operator.yaml"
-  - "percona.yaml"
+#  - "percona.yaml"

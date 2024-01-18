@@ -1,9 +1,9 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ghost-mysql
+  name: ghost-mysql-cluster
 spec:
-  releaseName: ghost-mysql
+  releaseName: ghost-mysql-cluster
   chart:
     spec:
       chart: mysql-innodbcluster

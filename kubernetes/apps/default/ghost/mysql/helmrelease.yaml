@@ -12,3 +12,6 @@ spec:
         name: percona
         namespace: flux-system
   interval: 15m
+  valuesFrom:
+    - kind: ConfigMap
+      name: percona-value-overrides

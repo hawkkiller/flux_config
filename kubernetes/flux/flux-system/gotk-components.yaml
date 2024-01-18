@@ -3698,7 +3698,7 @@ spec:
     plural: kustomizations
     shortNames:
     - ks
-    singular: kustomization.yaml
+    singular: kustomization
   scope: Namespaced
   versions:
   - additionalPrinterColumns:
@@ -3944,8 +3944,8 @@ spec:
                   type: object
                 type: array
               path:
-                description: Path to the directory containing the kustomization.yaml.yaml
-                  file, or the set of plain YAMLs a kustomization.yaml.yaml should be generated
+                description: Path to the directory containing the kustomization.yaml
+                  file, or the set of plain YAMLs a kustomization.yaml should be generated
                   for. Defaults to 'None', which translates to the root path of the
                   SourceRef.
                 type: string
@@ -4013,7 +4013,7 @@ spec:
                   when reconciling this Kustomization.
                 type: string
               sourceRef:
-                description: Reference of the source where the kustomization.yaml file
+                description: Reference of the source where the kustomization file
                   is.
                 properties:
                   apiVersion:
@@ -4044,7 +4044,7 @@ spec:
                 type: boolean
               targetNamespace:
                 description: TargetNamespace sets or overrides the namespace in the
-                  kustomization.yaml.yaml file.
+                  kustomization.yaml file.
                 maxLength: 63
                 minLength: 1
                 type: string
@@ -4066,7 +4066,7 @@ spec:
           status:
             default:
               observedGeneration: -1
-            description: KustomizationStatus defines the observed state of a kustomization.yaml.
+            description: KustomizationStatus defines the observed state of a kustomization.
             properties:
               conditions:
                 items:
@@ -4215,7 +4215,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: KustomizationSpec defines the desired state of a kustomization.yaml.
+            description: KustomizationSpec defines the desired state of a kustomization.
             properties:
               decryption:
                 description: Decrypt Kubernetes secrets before applying them on the
@@ -4488,8 +4488,8 @@ spec:
                   x-kubernetes-preserve-unknown-fields: true
                 type: array
               path:
-                description: Path to the directory containing the kustomization.yaml.yaml
-                  file, or the set of plain YAMLs a kustomization.yaml.yaml should be generated
+                description: Path to the directory containing the kustomization.yaml
+                  file, or the set of plain YAMLs a kustomization.yaml should be generated
                   for. Defaults to 'None', which translates to the root path of the
                   SourceRef.
                 type: string
@@ -4548,7 +4548,7 @@ spec:
                   when reconciling this Kustomization.
                 type: string
               sourceRef:
-                description: Reference of the source where the kustomization.yaml file
+                description: Reference of the source where the kustomization file
                   is.
                 properties:
                   apiVersion:
@@ -4578,7 +4578,7 @@ spec:
                 type: boolean
               targetNamespace:
                 description: TargetNamespace sets or overrides the namespace in the
-                  kustomization.yaml.yaml file.
+                  kustomization.yaml file.
                 maxLength: 63
                 minLength: 1
                 type: string
@@ -4605,7 +4605,7 @@ spec:
           status:
             default:
               observedGeneration: -1
-            description: KustomizationStatus defines the observed state of a kustomization.yaml.
+            description: KustomizationStatus defines the observed state of a kustomization.
             properties:
               conditions:
                 items:
@@ -5064,8 +5064,8 @@ spec:
                   x-kubernetes-preserve-unknown-fields: true
                 type: array
               path:
-                description: Path to the directory containing the kustomization.yaml.yaml
-                  file, or the set of plain YAMLs a kustomization.yaml.yaml should be generated
+                description: Path to the directory containing the kustomization.yaml
+                  file, or the set of plain YAMLs a kustomization.yaml should be generated
                   for. Defaults to 'None', which translates to the root path of the
                   SourceRef.
                 type: string
@@ -5133,7 +5133,7 @@ spec:
                   when reconciling this Kustomization.
                 type: string
               sourceRef:
-                description: Reference of the source where the kustomization.yaml file
+                description: Reference of the source where the kustomization file
                   is.
                 properties:
                   apiVersion:
@@ -5164,7 +5164,7 @@ spec:
                 type: boolean
               targetNamespace:
                 description: TargetNamespace sets or overrides the namespace in the
-                  kustomization.yaml.yaml file.
+                  kustomization.yaml file.
                 maxLength: 63
                 minLength: 1
                 type: string
@@ -5193,7 +5193,7 @@ spec:
           status:
             default:
               observedGeneration: -1
-            description: KustomizationStatus defines the observed state of a kustomization.yaml.
+            description: KustomizationStatus defines the observed state of a kustomization.
             properties:
               conditions:
                 items:

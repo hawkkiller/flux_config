@@ -22,3 +22,9 @@ spec:
       useSelfSigned: true
     serverInstances: 3
     routerInstances: 1
+    datadirVolumeClaimTemplate:
+      accessModes:
+        - ReadWriteOnce
+      resources:
+        requests:
+          storage: 5Gi

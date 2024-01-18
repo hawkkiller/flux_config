@@ -18,5 +18,7 @@ spec:
         user: "root"
         password: "password"
         host: "%"
+    tls:
+      useSelfSigned: true
     serverInstances: 1
     routerInstances: 1

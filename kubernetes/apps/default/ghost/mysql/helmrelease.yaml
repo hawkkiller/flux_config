@@ -6,32 +6,9 @@ spec:
   releaseName: ghost-mysql-cluster
   chart:
     spec:
-      chart: mysql-innodbcluster
+      chart: pxc-db
       sourceRef:
         kind: HelmRepository
-        name: mysql-operator
+        name: percona
         namespace: flux-system
   interval: 15m
-  values:
-    credentials:
-      root:
-        user: "root"
-        password: "password"
-        host: "%"
-    tls:
-      useSelfSigned: true
-    serverInstances: 3
-    routerInstances: 1
-    datadirVolumeClaimTemplate:
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 5Gi
-    podSpec:
-      containers:
-      - name: mysql
-        resources:
-          requests:
-            memory: "256Mi"  # adapt to your needs
-            cpu: "100m"      # adapt to your needs

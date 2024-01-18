@@ -5,7 +5,7 @@ metadata:
   name: cluster-apps-mysql-operator
   namespace: flux-system
 spec:
-  path: kubernetes/apps/kube-system/mysql-operator/app
+  path: kubernetes/apps/ext/mysql-operator/app
   prune: true
   sourceRef:
     kind: GitRepository

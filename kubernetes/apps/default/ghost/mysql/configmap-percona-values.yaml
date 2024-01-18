@@ -8,7 +8,7 @@ data:
     sharding:
       enabled: false
     pxc:
-      size: 3
+      size: 1
       volumeSpec:
         pvc:
           resources:

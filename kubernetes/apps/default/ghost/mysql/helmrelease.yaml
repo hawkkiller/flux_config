@@ -28,3 +28,10 @@ spec:
       resources:
         requests:
           storage: 5Gi
+    podSpec:
+      containers:
+      - name: mysql
+        resources:
+          requests:
+            memory: "256Mi"  # adapt to your needs
+            cpu: "100m"      # adapt to your needs

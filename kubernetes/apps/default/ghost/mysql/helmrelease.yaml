@@ -1,9 +1,9 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: ghost-mysql-cluster
+  name: ghost-percona-cluster
 spec:
-  releaseName: ghost-mysql-cluster
+  releaseName: ghost-percona-cluster
   chart:
     spec:
       chart: pxc-db

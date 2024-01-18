@@ -1,0 +1,10 @@
+apiVersion: mysql.oracle.com/v2
+kind: InnoDBCluster
+metadata:
+  name: mycluster
+spec:
+  secretName: ghost-mysql
+  tlsUseSelfSigned: true
+  instances: 1
+  router:
+    instances: 1

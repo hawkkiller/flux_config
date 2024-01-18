@@ -20,5 +20,5 @@ spec:
         host: "%"
     tls:
       useSelfSigned: true
-    serverInstances: 1
+    serverInstances: 3
     routerInstances: 1
